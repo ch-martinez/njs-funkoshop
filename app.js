@@ -16,9 +16,13 @@ const expressEjsLayouts = require('express-ejs-layouts')
 app.use(expressEjsLayouts)
 app.set('layout', 'layouts/mainLayout')
 
-app.get('/', (req,res) => {
-    res.send('Corriendo sv')
-})
+/* Importacion routers */
+const mainRouter = require('./src/routers/mainRouter')
+
+
+/* Routers */
+app.use('/', mainRouter)
+
 
 app.listen(PORT,() => {
     console.log(`Serever: http://localhost:${PORT}`)
