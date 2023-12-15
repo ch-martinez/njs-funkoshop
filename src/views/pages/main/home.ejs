@@ -1,0 +1,33 @@
+<main class="main--home">
+    <!-- Hero section -->
+    <section class="hero">
+        <section class="container--hero">
+            <article class="hero__content">
+                <span class="hero__title">Nuevos ingresos</span>
+                <span class="hero__description">Descubrí el próximo Funko Pop de tu colección</span>
+                <a class="btn__link btn__link--hero" href="#">shop</a>
+            </article>
+        </section>
+    </section>
+    
+    <section class="container">
+        <section class="collections">
+            <%- include('../../components/collection.ejs')%>
+            <%- include('../../components/collection.ejs')%>
+            <%- include('../../components/collection.ejs')%>
+            <%- include('../../components/collection.ejs')%>
+        </section>
+
+        <section class="glide glide--carousel">
+            <h2 class="glid__title">ÚLTIMOS LANZAMIENTOS<h2>
+            <!-- Slide de cards -->
+            <%- include('components/glide.ejs', {products} )%>
+            <!-- FLechas de contol slide -->
+            <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><iconify-icon icon="octicon:chevron-up-12" rotate="270deg"></iconify-icon></button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><iconify-icon icon="octicon:chevron-up-12" rotate="90deg"></iconify-icon></button>
+            </div>
+        </section>
+    </section>
+
+</main>
