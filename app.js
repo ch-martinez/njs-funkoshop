@@ -7,6 +7,15 @@ const path = require('path')
 app.use(express.static(path.resolve(__dirname,'public')))
 app.use(express.json())
 
+//Config. de template engine: EJS
+app.set('view engine', 'ejs')
+app.set('views', path.resolve(__dirname,'src/views'))
+
+//Config. de motor de plantillas
+const expressEjsLayouts = require('express-ejs-layouts')
+app.use(expressEjsLayouts)
+app.set('layout', 'layouts/mainLayout')
+
 app.get('/', (req,res) => {
     res.send('Corriendo sv')
 })
