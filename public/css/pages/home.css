@@ -1,0 +1,51 @@
+.main--home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-image: url(/img/funkos-banner.webp);
+    background-size: cover;
+    background-attachment: fixed;
+    padding: var(--spacing-68);
+}
+
+    /* Filtro background hero */
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(2px) brightness(.7);
+    }
+
+.container--hero{
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.hero__content{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    color: var(--font-light-solid);
+}
+
+.hero__title{
+    font-size: var(--font-large);
+    font-weight: 500;
+}
+
+.hero__description{
+    font-size: var(--font-medium);
+    font-weight: 300;
+}
