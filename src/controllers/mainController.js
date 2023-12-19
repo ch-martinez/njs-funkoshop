@@ -1,8 +1,15 @@
-const homeView = (req, res) => {
+const collectionsModels = require('../models/collectionsModels')
+
+const productsModels = require('../models/productsModels')
+
+const homeView = async (req, res) => {
+    const products = await productsModels.getAllProductsFromBD()
+    const collections = await collectionsModels.getAllCollectionsFromBD()
     const page = {
-        title: 'FunkoShop'
+        title: 'FunkoShop',
+        glide: true
     }
-    res.render('pages/main/home', {page})
+    res.render('pages/main/home', {page, products, collections})
 }
 
 module.exports = {
