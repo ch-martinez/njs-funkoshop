@@ -1,0 +1,28 @@
+<main class="main--product">
+    <section class="product__container container">
+        <article class="product" id="<%= product.product_id %>">
+            <figure class="product__figure">
+                <img class="product__img-front" src="/img/funkos/<%= product.img_front %>" alt="<%= product.product_description %>">
+                <img class="product__img-back" src="/img/funkos/<%= product.img_back %>" alt="<%= product.product_description %>">
+            </figure>
+            <section class="product__content">
+                <span class="product__collection"><%= product.collection_name %></span>
+                <h1 class="product__name"><%= product.product_name %></h1>
+                <p class="product__description"><%= product.product_description %></p>
+                <div class="product__price__container">
+                    <span class="product__discount">$ <%= product.product_discount %>  -  </span>
+                    <span class="product__price">$ <%= product.product_price %></span>
+                </div>
+                <form class="lot" method="post" action="/shop/cart">
+                    <div class="lot__inputs">
+                        <button class="lot__btn lot__btn--substract" type="button">-</button>
+                        <input class="lot__input --hide-arrows" type="number" value="1" min="1" max="<%= product.product_stock %>">
+                        <button class="lot__btn lot__btn--add" type="button">+</button>
+                    </div>
+                    <button class="btn" type="submit">Agregar al carrito</button>
+                </form>
+            </section>
+        </article>
+        <%- include('../../components/glide.ejs', {title: 'Productos relacionados', products})%>
+    </section>
+</main>
