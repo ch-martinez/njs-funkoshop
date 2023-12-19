@@ -7,6 +7,7 @@
     --primary-300: rgba(29, 140, 248, 0.3);
     
     --secondary-solid: rgb(172, 250, 223);
+    --delet-solid: rgb(255, 53, 53);
 
     /* Grandients */
     --gradient-dark-solid: linear-gradient(36deg, rgba(29,37,59,0.7) 0%, rgba(29,37,59,1) 100%);
@@ -14,6 +15,7 @@
 
     /* Shadows */
     --shadow-btn: 0 4px 6px rgba(50,50,93,.21), 0 1px 3px rgba(0,0,0,.18);
+    --shadow-card: 0 1px 20px 0 rgba(0,0,0,.1);
 
     /* Background */
     --bg-light-solid: rgb(255, 255, 255);
@@ -21,6 +23,9 @@
 
     --bg-dark-solid: #1d253b;
     --bg-dark-soft: #30343F;
+
+    /* Border */
+    --border-input: rgba(29,37,59,.5);
 
     /* Font */
     --font-light-solid: #FFF;
@@ -32,9 +37,11 @@
     --font-dark-400: rgba(34,42,66,.2);
     --font-dark-200: rgba(34,42,66,.2);
 
+    --font-link: rgba(29, 140, 248, 0.7);
+
     /* Typography */
-    --font-alternative: 'Jura', sans-serif;
     --font-base: 'Poppins', sans-serif;
+    --font-alternative: 'Jura', sans-serif;
 
     /* Font-sizes */
 
@@ -65,10 +72,12 @@
     --spacing-4: 0.4rem;
 
     /* Transitions */
-    --transition-btn: box-shadow .3s ease-in-out, transform .3s ease-in-out;;
+    --transition-bs-t: box-shadow .2s ease-in-out, transform .2s ease-in-out;
+    --transition-border-outline: outline .2s ease-in-out, border .3s ease-in-out;
 
     /* Animations */
 
     /* Misc */
-    --border-radius-primary: calc(0.2857rem - 0.0625rem) calc(0.2857rem - 0.0625rem) 0 0;
+    --br-primary: 0.7rem;
+    --br-secondary: 0.5rem;
 }
