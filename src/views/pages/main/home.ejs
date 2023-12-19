@@ -9,25 +9,15 @@
             </article>
         </section>
     </section>
-    
+
     <section class="container">
         <section class="collections">
-            <%- include('../../components/collection.ejs')%>
-            <%- include('../../components/collection.ejs')%>
-            <%- include('../../components/collection.ejs')%>
-            <%- include('../../components/collection.ejs')%>
-        </section>
+            <% collections.forEach((collection)=>{%>
+                <%- include('../../components/collection.ejs',{collection})%>
+            <%})%>
 
-        <section class="glide glide--carousel">
-            <h2 class="glid__title">ÚLTIMOS LANZAMIENTOS<h2>
-            <!-- Slide de cards -->
-            <%- include('components/glide.ejs', {products} )%>
-            <!-- FLechas de contol slide -->
-            <div class="glide__arrows" data-glide-el="controls">
-                <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><iconify-icon icon="octicon:chevron-up-12" rotate="270deg"></iconify-icon></button>
-                <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><iconify-icon icon="octicon:chevron-up-12" rotate="90deg"></iconify-icon></button>
-            </div>
         </section>
+        <%- include('../../components/glide.ejs', {title: 'Ultimos Lanzamientos', products})%>
     </section>
 
 </main>
