@@ -19,10 +19,12 @@ app.set('layout', 'layouts/mainLayout')
 /* Importacion routers */
 const mainRouter = require('./src/routers/mainRouter')
 const shopRouter = require('./src/routers/shopRouter')
+const authRouter = require('./src/routers/authRouter')
 
 /* Routers */
 app.use('/', mainRouter)
 app.use('/shop', shopRouter)
+app.use('/auth', authRouter)
 
 
 app.listen(PORT,() => {
