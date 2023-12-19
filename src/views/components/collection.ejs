@@ -1,15 +1,15 @@
 <article class="collection">
     <section class="collection__content">
         <h2 class="collection__title">
-            pokemon indigo
+            <%= collection.collection_name %>
         </h2>
         <span class="collection__description">
-            Atrapa todos los que puedas y disfruta de una colección llena de amigos.
+            <%= collection.collection_description %>
         </span>
         <div class="collection__line"></div>
-        <a href="#" class="btn__link">ver colección</a>
+        <a href="/shop/?<%= collection.collection_id %>" class="btn__link">ver colección</a>
     </section>
     <figure class="collection__figure">
-        <img src="/img/pokemon/charmander-1.webp" alt="">
+        <img src="/img/<%= collection.collection_image %>" alt="">
     </figure>
 </article>
