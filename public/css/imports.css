@@ -11,9 +11,15 @@
 @import url('/css/partials/header-footer.css');
 
 /* Components */
+@import url('/css/components/glide.css');
 @import url('/css/components/buttons-inputs.css');
-@import url('/css/components/card.css');
 @import url('/css/components/collections.css');
+@import url('/css/components/lot.css');
+@import url('/css/components/card.css');
 
 /* Pages */
 @import url('/css/pages/home.css');
+@import url('/css/pages/shop.css');
+@import url('/css/pages/product.css');
+@import url('/css/pages/cart.css');
+@import url('/css/pages/login.css');
