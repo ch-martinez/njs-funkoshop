@@ -1,0 +1,15 @@
+<article class="collection">
+    <section class="collection__content">
+        <h2 class="collection__title">
+            <%= collection.collection_name %>
+        </h2>
+        <span class="collection__description">
+            <%= collection.collection_description %>
+        </span>
+        <div class="collection__line"></div>
+        <a href="/shop/?<%= collection.collection_id %>" class="btn__link">ver colección</a>
+    </section>
+    <figure class="collection__figure">
+        <img src="/img/<%= collection.collection_image %>" alt="">
+    </figure>
+</article>

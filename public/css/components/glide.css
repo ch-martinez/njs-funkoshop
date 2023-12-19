@@ -1,0 +1,30 @@
+/* Seccion carousel - Libreria GlidJS*/
+.glide{
+    margin-bottom: var(--spacing-48);
+}
+
+.glid__title{
+    font-size: var(--font-x-large);
+    font-weight: 700;
+    margin: var(--spacing-100) 0 var(--spacing-28);
+}
+
+/* GLID fix arrow */
+.glide__arrow{
+    top: 62%;
+    background-color: var(--bg-light-solid);
+    box-shadow: var(--border-shadow--03);
+    border: 1px solid var(--border-input);
+    color: var(--bg-dark);
+    font-size: 1.5rem;
+    line-height: 0;
+}
+
+    .glide__arrow--left{
+        left: -15px;
+    }
+
+    .glide__arrow--right{
+        /* right: 17px; */
+        right: -15px;
+    }

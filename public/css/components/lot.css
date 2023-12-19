@@ -1,0 +1,66 @@
+.lot{
+    display: flex;
+    margin-top: var(--spacing-16);
+    flex-direction: column;
+    gap: var(--spacing-68);
+}
+
+.lot__inputs{
+    display: flex;
+    gap: 0;
+}
+
+.lot__inputs--cart{
+    justify-content: center;
+}
+
+.lot__btn{
+    cursor: pointer;
+    width: 25px;
+    font-size: var(--font-m-medium);
+    font-weight: 600;
+    border: none;
+    outline: none;
+    background-color: var(--primary-500);
+}
+
+.lot__btn--add{
+    font-weight: 500;
+    border-radius: 0 var(--br-primary) var(--br-primary) 0;
+}
+
+.lot__btn--substract{
+    line-height: 2rem;
+    border-radius: var(--br-primary) 0 0 var(--br-primary);
+}
+
+.lot__input{
+    width: 70px;
+    height: calc(3.25rem + 2px);
+    margin: 0;
+    text-align: center;
+    background-color: var(--bg-light-solid);
+    border: 1px solid var(--primary-500);
+    color: var(--font-dark-900);
+    font-size: var(--font-medium);
+    font-weight: 500;
+    transition: var(--transition-border-outline);
+}
+
+    .lot__input:focus{
+        outline: none;
+    }
+
+
+
+
+/*  Se deja para mobile
+.lot__btn{
+    cursor: pointer;
+    width: 40px;
+    font-size: var(--font-m-medium);
+    font-weight: 600;
+    border: none;
+    outline: none;
+    background-color: var(--primary-500);
+} */

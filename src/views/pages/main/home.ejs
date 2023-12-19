@@ -1,0 +1,23 @@
+<main class="main--home">
+    <!-- Hero section -->
+    <section class="hero">
+        <section class="container--hero">
+            <article class="hero__content">
+                <span class="hero__title">Nuevos ingresos</span>
+                <span class="hero__description">Descubrí el próximo Funko Pop de tu colección</span>
+                <a class="btn__link btn__link--hero" href="#">shop</a>
+            </article>
+        </section>
+    </section>
+
+    <section class="container">
+        <section class="collections">
+            <% collections.forEach((collection)=>{%>
+                <%- include('../../components/collection.ejs',{collection})%>
+            <%})%>
+
+        </section>
+        <%- include('../../components/glide.ejs', {title: 'Ultimos Lanzamientos', products})%>
+    </section>
+
+</main>

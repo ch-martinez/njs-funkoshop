@@ -1,0 +1,31 @@
+<main class="main--shop">
+    <section class="container">
+        <section class="search-order-container">
+            <div class="search-bar">
+                <iconify-icon class="search-bar__icon" icon="akar-icons:search"></iconify-icon>
+                <input class="input--search" type="search" name="search" id="search" placeholder="Ingrese el nombre de un funko o de una colección...">
+            </div>
+            <div class="order">
+                <label for="order" class="order__label">Ordenar por:</label>
+                <select class="input--select" name="order" id="order">
+                    <option value="">Nombre A-Z</option>
+                    <option value="">Nombre Z-A</option>
+                    <option value="">Menor precio</option>
+                    <option value="">Mayor precio</option>
+                </select>
+            </div>
+        </section>
+        <section class="products--container">
+            <section class="products__list">
+                <ul class="products__ul">
+                    <% products.forEach((item) => {%>
+                        <%- include('../../components/card.ejs', {item: item}) %>
+                    <%}) %>
+                </ul>
+            </section>
+            <section class="paginator">
+                
+            </section>
+        </section>
+    </section>
+</main>

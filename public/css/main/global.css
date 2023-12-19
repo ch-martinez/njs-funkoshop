@@ -1,0 +1,20 @@
+body{
+    color: var(--font-dark-solid);
+    font-family: var(--font-base);
+    font-weight: 300;
+    background-color: var(--bg-light-soft);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+}

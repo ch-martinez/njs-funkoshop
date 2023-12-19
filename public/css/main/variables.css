@@ -1,0 +1,83 @@
+:root {
+    /* Palette */
+    --primary-solid: rgb(29, 140, 248);
+    --primary-900: rgba(29, 140, 248, 0.9);
+    --primary-700: rgba(29, 140, 248, 0.7);
+    --primary-500: rgba(29, 140, 248, 0.5);
+    --primary-300: rgba(29, 140, 248, 0.3);
+    
+    --secondary-solid: rgb(172, 250, 223);
+    --delet-solid: rgb(255, 53, 53);
+
+    /* Grandients */
+    --gradient-dark-solid: linear-gradient(36deg, rgba(29,37,59,0.7) 0%, rgba(29,37,59,1) 100%);
+    --grandient-blue: linear-gradient(36deg, rgba(29,221,248,1) 0%, rgba(29,140,248,1) 27%, rgba(51,52,244,1) 83%);
+
+    /* Shadows */
+    --shadow-btn: 0 4px 6px rgba(50,50,93,.21), 0 1px 3px rgba(0,0,0,.18);
+    --shadow-card: 0 1px 20px 0 rgba(0,0,0,.1);
+
+    /* Background */
+    --bg-light-solid: rgb(255, 255, 255);
+    --bg-light-soft: #f5f6fa;
+
+    --bg-dark-solid: #1d253b;
+    --bg-dark-soft: #30343F;
+
+    /* Border */
+    --border-input: rgba(29,37,59,.5);
+
+    /* Font */
+    --font-light-solid: #FFF;
+    --font-light-800: rgba(255,255,255,.8);
+
+    --font-dark-solid: #1d253b;
+    --font-dark-900: rgba(34,42,66,.9);
+    --font-dark-700: rgba(34,42,66,.7);
+    --font-dark-400: rgba(34,42,66,.2);
+    --font-dark-200: rgba(34,42,66,.2);
+
+    --font-link: rgba(29, 140, 248, 0.7);
+
+    /* Typography */
+    --font-base: 'Poppins', sans-serif;
+    --font-alternative: 'Jura', sans-serif;
+
+    /* Font-sizes */
+
+    --font-x-large: 4.6rem;
+    --font-large: 2.8rem;
+    --font-m-medium: 2.2rem;
+    --font-medium: 1.8rem;
+    --font-small: 1.6rem;
+    --font-x-small: 1rem;
+
+    --font-logo: 1.8rem;
+    --font-social-networks: 2.4rem;
+
+
+    /* Spacings */
+    --spacing-128: 12.8rem;
+    --spacing-100: 10rem;
+    --spacing-68: 6.8rem;
+    --spacing-48: 4.8rem;
+    --spacing-42: 4.2rem;
+    --spacing-36: 3.6rem;
+    --spacing-28: 2.8rem;
+    --spacing-24: 2.4rem;
+    --spacing-20: 2rem;
+    --spacing-16: 1.6rem;
+    --spacing-12: 1.2rem;
+    --spacing-8: 0.8rem;
+    --spacing-4: 0.4rem;
+
+    /* Transitions */
+    --transition-bs-t: box-shadow .2s ease-in-out, transform .2s ease-in-out;
+    --transition-border-outline: outline .2s ease-in-out, border .3s ease-in-out;
+
+    /* Animations */
+
+    /* Misc */
+    --br-primary: 0.7rem;
+    --br-secondary: 0.5rem;
+}
