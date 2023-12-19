@@ -48,4 +48,5 @@
 .hero__description{
     font-size: var(--font-medium);
     font-weight: 300;
+    margin-bottom: var(--spacing-42);
 }
