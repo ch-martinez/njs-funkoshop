@@ -11,7 +11,7 @@ const pool = mysql.createPool({
     waitForConnections: true,
     connectionLimit: 5,
     queueLimit: 0,
-    enableKeepAlive: true
+    //enableKeepAlive: true
 })
 const prueba = async () => {
     const [row] = await pool.query('SELECT * FROM user')
