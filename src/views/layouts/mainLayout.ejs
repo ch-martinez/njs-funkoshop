@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <% if (page.glide) {%>
+        <!-- CSS Libreria glide -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
+    <%}%>
     <link rel="stylesheet" href="/css/imports.css">
     <title><%= page.title %></title>
 </head>
@@ -11,5 +16,10 @@
     <%- body %>
     <%- include('../partials/footer.ejs') %>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <% if (page.glide) {%>
+        <!-- Glide (Carrousel) -->
+        <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script> <!-- Importacion libreria -->
+        <script src="/scripts/glideConfig.js"></script> <!-- Configuracion de libreria Glide -->
+    <%}%>
 </body>
 </html>
