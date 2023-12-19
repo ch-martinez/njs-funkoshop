@@ -1,0 +1,79 @@
+.card{
+    max-width: 300px;
+    height: 100%;
+    padding: var(--spacing-20);
+    background-color: var(--bg-light-solid);
+    border-radius: var(--br-primary);
+    color: var(--font-dark-solid);
+    transition: var(--transition-bs-t);
+    flex-grow: 1;
+}
+
+.card:hover{
+    box-shadow: var(--shadow-card);
+}
+
+.card__link{
+    display: inline-block;
+}
+
+.card__figure{
+}
+
+.card__img-front{
+
+}
+
+.card__img-back{
+    display: none;
+}
+
+    .card__figure:hover .card__img-front{
+        display: none;
+    }
+
+    .card__figure:hover .card__img-back{
+        display: initial;
+    }
+
+.card__content{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--spacing-8);
+}
+
+.card__collection{
+    color: var(--font-dark-700);
+    font-size: var(--font-medium);
+    font-weight: 400;
+}
+
+.card__name{
+    color: var(--font-dark-900);
+    font-size: var(--font-large);
+    font-weight: 500;
+    line-height: 3rem;
+    text-wrap: wrap;
+}
+
+.card__price-box{
+    font-size: var(--font-m-medium);
+    font-weight: 300;
+}
+
+.card__discount{
+    font-size: var(--font-m-medium);
+}
+
+.card__price{
+    font-size: var(--font-m-medium);
+}
+
+.card__dues{
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--font-link);
+}
