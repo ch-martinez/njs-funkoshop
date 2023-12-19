@@ -1,0 +1,17 @@
+<article class="card">
+    <a class="card__link" href="/shop/item/<%=item.product_id%>">
+        <figure class="card__figure">
+            <img class="card__img-front" src="/img/funkos/<%=item.img_front%>" alt="<%=item.collection_description%>">
+            <img class="card__img-back" src="/img/funkos/<%=item.img_back%>" alt="<%=item.collection_description%>">
+        </figure>
+        <section class="card__content">
+            <h3 class="card__collection"><%=item.collection_name%></h3>
+            <span class="card__name"><%=item.product_name%></span>
+            <div class="card__price-box">
+                <span class="card__discount">$ <%=item.product_discount%></span>
+                <span class="card__price">$ <%=item.product_price%></span>
+            </div>
+            <span class="card__dues"><%=item.product_dues%> cuotas sin interés</span>
+        </section>
+    </a>
+</article>
