@@ -20,6 +20,29 @@
         transform: translateY(-3px);
     }
 
+.btn--square{
+    cursor: pointer;
+    display: inline-block;
+    padding: var(--spacing-12) var(--spacing-48);
+    background-image: var(--gradient-primary);
+    color: var(--font-light-solid);
+    font-size: var(--font-medium);
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    border-radius: var(--br-primary);
+    transition: var(--transition-bs-t);
+}
+
+    /* btn hover */
+    .btn--square:hover{
+        box-shadow: var(--shadow-btn);
+        transform: translateY(-3px);
+    }
+
 .btn__link{
     cursor: pointer;
     display: inline-block;
@@ -54,8 +77,31 @@
         transform: translateY(-3px);
     }
 
+/* Labels */
+
+.label{
+    color: var(--font-dark-900);
+    font-size: var(--font-small);
+    font-weight: 400;
+}
 
 /* Inputs */
+
+.input--text{
+    width: 100%;
+    padding: 10px 18px;
+    border: 1px solid var(--input-border-soft);
+    border-radius: var(--br-primary);
+    color: var(--font-dark-700);
+    font-size: var(--font-small);
+    transition: var(--transition-border-outline);
+}
+
+    .input--text:focus{
+        outline: none;
+        border-color: var(--primary-solid);
+    }
+
 
 .input--search{
     width: 100%;
@@ -87,6 +133,11 @@
     .input--select:focus{
         outline: none;
         border: 1px solid var(--primary-solid);
+    }
+
+    .input--select-table{
+        height: calc(3.25rem + 2px);
+        width: initial;
     }
 
 /* Hidde arrows of input number */
