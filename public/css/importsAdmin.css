@@ -1,0 +1,7 @@
+/* Components admin */
+@import url('/css/components/admin/side-menu.css');
+@import url('/css/components/admin/table.css');
+
+/* Main */
+@import url('/css/pages/admin.css');
+
