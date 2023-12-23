@@ -20,11 +20,13 @@ app.set('layout', 'layouts/mainLayout')
 const mainRouter = require('./src/routers/mainRouter')
 const shopRouter = require('./src/routers/shopRouter')
 const authRouter = require('./src/routers/authRouter')
+const adminRouter = require('./src/routers/adminRouter')
 
 /* Routers */
 app.use('/', mainRouter)
 app.use('/shop', shopRouter)
 app.use('/auth', authRouter)
+app.use('/admin', adminRouter)
 
 
 app.listen(PORT,() => {
