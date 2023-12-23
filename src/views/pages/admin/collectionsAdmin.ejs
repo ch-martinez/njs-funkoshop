@@ -1,0 +1,49 @@
+<main>
+    <div class=" container-admin">
+
+        <%- include('../../components/admin/sidebar.ejs')%>
+
+        <section class="content">
+            <article class="card-admin">
+                MENU DE BUSQUEDA
+            </article>
+            <article class="card-admin">
+                <table class="table-admin">
+                    <thead class="table-admin__head">
+                        <tr class="table-admin__tr">
+                            <td class="table-admin__td">ID</td>
+                            <td class="table-admin__td">Descripción</td>
+                            <td class="table-admin__td" colspan="3">Nombre</td>
+                            <td class="table-admin__td" colspan="2">ACCIONES</td>
+                        </tr>
+                    </thead>
+                    <tbody class="table-admin__body">
+                        <% collections.forEach((collection) => { %>
+                            <tr class="table-admin__tr">
+                                <td class="table-admin__td">
+                                    <%= collection.collection_id %>
+                                </td>
+                                <td class="table-admin__td">
+                                    <%= collection.collection_name %>
+                                </td>
+                                <td class="table-admin__td" colspan="3">
+                                    <%= collection.collection_description %>
+                                </td>
+                                <td class="table-admin__td table-admin__icon">
+                                    <a class="table-admin__icon--edit" href="">
+                                        <iconify-icon icon="akar-icons:edit"></iconify-icon>
+                                    </a>
+                                </td>
+                                <td class="table-admin__td table-admin__icon">
+                                    <a class="table-admin__icon--delet" href="">
+                                        <iconify-icon icon="akar-icons:circle-x"></iconify-icon>
+                                    </a>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                    </table>
+                </article>
+        </section>
+    </div>
+</main>

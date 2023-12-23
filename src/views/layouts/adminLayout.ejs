@@ -3,10 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/importsAdmin.css">
     <link rel="stylesheet" href="/css/imports.css">
-    <title>ADMIN </title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css">
+    <title>Administracion - FS</title>
 </head>
 <body>
+    <%- include('../partials/headerAdmin.ejs') %>
     <%- body %>
+    <%# include('../partials/footerAdmin.ejs') %>
+    <!-- <script type="module" src="/scripts/simpleDatatableConfig.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
+    <script src="/scripts/simpleDatatableConfig.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </body>
 </html>
