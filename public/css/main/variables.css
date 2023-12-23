@@ -1,21 +1,34 @@
 :root {
     /* Palette */
-    --primary-solid: rgb(29, 140, 248);
-    --primary-900: rgba(29, 140, 248, 0.9);
-    --primary-700: rgba(29, 140, 248, 0.7);
-    --primary-500: rgba(29, 140, 248, 0.5);
-    --primary-300: rgba(29, 140, 248, 0.3);
+    --primary-solid: rgba(255, 141, 114, 1);
+    --primary-800: rgba(255, 141, 114, 0.8);
+    --primary-600: rgba(255, 141, 114, 0.6);
+    --primary-400: rgba(255, 141, 114, 0.4);
+    --primary-200: rgba(255, 141, 114, 0.2);
     
-    --secondary-solid: rgb(172, 250, 223);
+    --secondary-solid: rgba(186, 84, 245, 1);
+    --secondary-800: rgba(186, 84, 245, 0.8);
+    --secondary-600: rgba(186, 84, 245, 0.6);
+    --secondary-400: rgba(186, 84, 245, 0.4);
+    --secondary-200: rgba(186, 84, 245, 0.2);
+
+    /* Palette - Misc */
     --delet-solid: rgb(255, 53, 53);
 
+    --color-info: #1d8cf8!important;
+    --color-success: #00f2c3!important;
+    --color-waring: #ff8d72!important;
+    --color-danger: #fd5d93!important;
+
     /* Grandients */
+    --gradient-primary: linear-gradient(0deg,#ff6491,#ff8d72);
+    --gradient-secondary: linear-gradient(0deg,#ba54f5,#e14eca);
+
     --gradient-dark-solid: linear-gradient(36deg, rgba(29,37,59,0.7) 0%, rgba(29,37,59,1) 100%);
-    --grandient-blue: linear-gradient(36deg, rgba(29,221,248,1) 0%, rgba(29,140,248,1) 27%, rgba(51,52,244,1) 83%);
 
     /* Shadows */
     --shadow-btn: 0 4px 6px rgba(50,50,93,.21), 0 1px 3px rgba(0,0,0,.18);
-    --shadow-card: 0 1px 20px 0 rgba(0,0,0,.1);
+    --shadow-primary: 0 1px 20px 0 rgba(0,0,0,.1);
 
     /* Background */
     --bg-light-solid: rgb(255, 255, 255);
@@ -26,15 +39,19 @@
 
     /* Border */
     --border-input: rgba(29,37,59,.5);
+    --border-dark-100: rgba(29,37,59,.1);
+    --input-border-soft: rgba(29,37,59,.2);
 
     /* Font */
     --font-light-solid: #FFF;
     --font-light-800: rgba(255,255,255,.8);
+    --font-light-750: rgba(255,255,255,.75);
+    --font-light-600: rgba(255,255,255,.6);
 
     --font-dark-solid: #1d253b;
-    --font-dark-900: rgba(34,42,66,.9);
-    --font-dark-700: rgba(34,42,66,.7);
-    --font-dark-400: rgba(34,42,66,.2);
+    --font-dark-800: rgba(34,42,66,.8);
+    --font-dark-600: rgba(34,42,66,.6);
+    --font-dark-400: rgba(34,42,66,.4);
     --font-dark-200: rgba(34,42,66,.2);
 
     --font-link: rgba(29, 140, 248, 0.7);
@@ -74,6 +91,8 @@
     /* Transitions */
     --transition-bs-t: box-shadow .2s ease-in-out, transform .2s ease-in-out;
     --transition-border-outline: outline .2s ease-in-out, border .3s ease-in-out;
+    --transition-color: color .2s ease-in-out;
+    --transition-bg: background-color .1s ease-in-out;
 
     /* Animations */
 
