@@ -10,7 +10,7 @@
 }
 
 .card:hover{
-    box-shadow: var(--shadow-card);
+    box-shadow: var(--shadow-primary);
 }
 
 .card__link{
