@@ -14,8 +14,6 @@ const dataTable = new simpleDatatables.DataTable("#adminTable", {
     columns: [
         // Sort the second column in ascending order
         { select: 0, sort: "asc" },
-        // Disable sorting on the fourth and fifth columns
-        { select: [6, 7], sortable: false },
     ],
     classes: {
         input: "datatable-input input--text",
