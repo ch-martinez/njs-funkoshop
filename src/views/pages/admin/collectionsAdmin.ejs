@@ -1,6 +1,5 @@
 <main>
     <div class=" container-admin">
-
         <%- include('../../components/admin/sidebar.ejs')%>
 
         <section class="content">
@@ -8,17 +7,18 @@
                 MENU DE BUSQUEDA
             </article>
             <article class="card-admin">
-                <table class="table-admin">
+                <table id="adminTable" class="table-admin">
                     <thead class="table-admin__head">
                         <tr class="table-admin__tr">
-                            <td class="table-admin__td">ID</td>
-                            <td class="table-admin__td">Descripción</td>
-                            <td class="table-admin__td" colspan="3">Nombre</td>
-                            <td class="table-admin__td" colspan="2">ACCIONES</td>
+                            <th class="table-admin__td">ID</th>
+                            <th class="table-admin__td">Descripción</th>
+                            <th class="table-admin__td" colspan="3">Nombre</th>
+                            <th class="table-admin__td" data-sortable="false"></th>
+                            <th class="table-admin__td" data-sortable="false"></th>
                         </tr>
                     </thead>
                     <tbody class="table-admin__body">
-                        <% collections.forEach((collection) => { %>
+                        <% collections.forEach((collection)=> { %>
                             <tr class="table-admin__tr">
                                 <td class="table-admin__td">
                                     <%= collection.collection_id %>
@@ -30,7 +30,7 @@
                                     <%= collection.collection_description %>
                                 </td>
                                 <td class="table-admin__td table-admin__icon">
-                                    <a class="table-admin__icon--edit" href="">
+                                    <a class="table-admin__icon--edit" href="/admin/collections/edit/:<%= collections.collections_id %>">
                                         <iconify-icon icon="akar-icons:edit"></iconify-icon>
                                     </a>
                                 </td>
@@ -42,8 +42,8 @@
                             </tr>
                         <% }) %>
                     </tbody>
-                    </table>
-                </article>
+                </table>
+            </article>
         </section>
     </div>
 </main>
