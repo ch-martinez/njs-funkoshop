@@ -1,8 +1,8 @@
-const mysql = require('mysql2');
-require('dotenv').config();
+const { createPool } = require('mysql2/promise')
+const { config } = require('dotenv')
+config()
 
-
-const pool = mysql.createPool({
+/* const pool = createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
@@ -10,25 +10,29 @@ const pool = mysql.createPool({
     port: process.env.DB_PORT,
     waitForConnections: true,
     connectionLimit: 5,
-    queueLimit: 0,
-    //enableKeepAlive: true
+    queueLimit: 0
+}) */
+
+const pool = createPool({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'funkoshop',
+    port: 3306,
+    waitForConnections: true,
+    connectionLimit: 5,
+    queueLimit: 0
 })
-const prueba = async () => {
-    const [row] = await pool.query('SELECT * FROM user')
-    console.log(row)
-}
-//Prueba de conexion a BD
-pool.getConnection((error, connection) => {
-    if (error) {
-      console.error('Error al obtener una conexión:', error);
-    } else {
-      console.log('Conexión exitosa a la base de datos');
-      connection.release();
-    }
-  });
 
-
+pool.getConnection()
+    .then(connection => {
+        console.log('Database: Conectado OK')
+        connection.release()
+    })
+    .catch(err => {
+        console.log(`Database: Error al obtener la conexion, ${err}`)
+    })
 
 module.exports = {
-    conn: pool.promise()
+    pool
 }

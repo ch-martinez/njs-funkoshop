@@ -1,0 +1,58 @@
+.table-admin{
+    width: 100%;
+    color: var(--font-dark-800);
+    font-size: var(--font-small);
+    border-collapse: collapse;
+}
+
+/* Cabecera de tabla */
+.table-admin__head{
+    color: var(--font-dark-solid);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* Fila de tabla */
+.table-admin__tr{
+    transition: var(--transition-bg);
+}
+
+    tbody .table-admin__tr:hover{
+        background-color: var(--primary-200);
+        color: var(--font-dark-solid);
+    }
+
+/* Columna de tabla */
+.table-admin__td{
+    padding: var(--spacing-4) 0;
+    vertical-align: middle !important;
+}
+
+.table-admin__td:nth-child(6){
+    text-align: center;
+}
+
+.table-admin__body .table-admin__td{
+    border-top: 1px solid var(--border-dark-100);
+}
+
+.table-admin__icon{
+    color: var(--font-dark-600);
+    font-size: var(--font-large);
+    cursor: pointer;
+    transition: var(--transition-color);
+}
+
+    .table-admin__icon--delet:hover{
+        color: var(--color-danger);
+    }
+
+    .table-admin__icon--edit:hover{
+        color: var(--color-info);
+    }
+
+/* Simple-Datatables CUSTOM */
+.pagination--table button{
+    background-color: var(--primary-600) !important;
+    color: var(--font-dark-600) !important;
+}

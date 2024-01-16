@@ -5,9 +5,22 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    background-color: var(--bg-light-soft);
+    background-color:  hsla(0,0%,100%,.7);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid #e2e2e2;
     z-index: 100;
 }
+
+/* .header{
+    background-color: var(--bg--header);
+    backdrop-filter: saturate(180%) blur(20px);
+    position: fixed;
+    z-index: 10;
+    width: 100vw;
+    padding: 0 28px;
+    line-height: 50px;
+    border-bottom: 1px solid var(--border);
+} */
 
 .navbar{
     width: 100%;
@@ -46,13 +59,14 @@
 }
 .navbar__link{
         padding: 0.1rem 2rem;
-        border-radius: 4px;
+        border-radius: 20px;
+        transition: all var(--transition-02);
     }
 
     .navbar__link:hover{
-        background-image: var(--bg-grandient-blue);
-        background-size: 210% 210%;
-        background-position: top right;
+        color: var(--font-light-solid);
+        background-color: var(--primary-solid);
+        box-shadow: var(--shadow-navbar);
     }
     
 
@@ -62,10 +76,13 @@
     background-color: var(--primary-500);
     padding: 7px;
     border-radius: 50px;
+    transition: all var(--transition-01);
 }
 
     .navbar__link--icon:hover iconify-icon{
+        color: var(--font-light-solid);
         background-color: var(--primary-solid);
+        box-shadow: var(--shadow-navbar);
     }
 
 /* Footer styles */
