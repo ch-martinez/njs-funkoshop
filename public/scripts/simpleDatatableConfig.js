@@ -6,9 +6,9 @@ const dataTable = new simpleDatatables.DataTable("#adminTable", {
         placeholder: "Buscar...",
         searchTitle: "Search within table",
         pageTitle: "Pagina {page}",
-        perPage: "productos por pagina",
+        perPage: "registros por pagina",
         noRows: "No entries found",
-        info: "Mostrando {start} a {end} de {rows} productos",
+        info: "Mostrando {start} a {end} de {rows} registros",
         noResults: "No hay resultados para tu busqueda",
     },
     columns: [
@@ -16,8 +16,10 @@ const dataTable = new simpleDatatables.DataTable("#adminTable", {
         { select: 0, sort: "asc" },
     ],
     classes: {
-        input: "datatable-input input--text",
-        selector: "datatable-selector input--select input--select-table",
+        input: "datatable-input input",
+        selector: "datatable-selector input input--select input--select-table",
+        active: "datatable-active  pagination--table",
+        paginationList: "datatable-pagination-list"
     }
 })
 
