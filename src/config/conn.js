@@ -26,11 +26,11 @@ const pool = createPool({
 
 pool.getConnection()
     .then(connection => {
-        console.log('Conectado a MySQL database')
+        console.log('Database: Conectado OK')
         connection.release()
     })
     .catch(err => {
-        console.log(`Error al obtener la conexion: ${err}`)
+        console.log(`Database: Error al obtener la conexion, ${err}`)
     })
 
 module.exports = {
