@@ -1,0 +1,75 @@
+.main--auth{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth{
+    padding: var(--spacing-24);
+    background-color: var(--bg-light-solid);
+    border-radius: var(--br-primary);
+    box-shadow: var(--shadow-primary);
+}
+
+.auth__title{
+    font-size: var(--font-x-large);
+    color: var(--font-dark-200);
+}
+
+.auth-form{
+    margin: var(--spacing-36) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-24);
+}
+
+.auth__footer{
+    display: flex;
+    justify-content: space-between;
+    color: var(--font-dark-400);
+    font-weight: 500;
+}
+
+
+.auth__link{
+    color: var(--font-dark-400);
+    transition: color var(--transition-03);
+}
+
+.auth__link:hover{
+    color: var(--primary-solid);
+}
+
+.auth__terms{
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-8);
+    font-size: var(--font-small);
+}
+
+        .auth__terms a{
+            color: var(--primary-solid);
+        }
+
+/* REGISTRO */
+.auth__title{
+    margin-bottom: var(--spacing-36);
+    color: var(--font-dark-800);
+}
+
+.auth-form--register{
+    margin: 0;
+}
+
+.auth-form__row{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-24);
+}
+
+.auth-form__row:last-child{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
