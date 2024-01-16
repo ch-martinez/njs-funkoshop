@@ -46,7 +46,7 @@
 
 .product__collection{
     font-size: var(--font-m-medium);
-    color: var(--font-dark-solid);
+    color: var(--font-dark-800);
 }
 .product__name{
     font-size: var(--font-x-large);
@@ -54,7 +54,7 @@
 }
 .product__description{
     font-size: var(--font-large);
-    color: var(--font-dark-700);
+    color: var(--font-dark-600);
 }
 .product__price__container{
     font-size: var(--font-medium);
@@ -63,13 +63,5 @@
 
 }
 .product__discount{
-
-}
-
-.lot__container{
-
-}
-
-.lot__input__container{
 
 }

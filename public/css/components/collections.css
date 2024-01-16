@@ -1,10 +1,8 @@
-.collections{
-    
-}
+.collections{}
 
 .collection{
     width: 100%;
-    margin: var(--spacing-20W) 0;
+    margin: var(--spacing-20) 0;
     display: flex;
     justify-content: space-between;
 }
@@ -29,7 +27,7 @@
 }
 
 .collection__description{
-    color: var(--font-dark-700);
+    color: var(--font-dark-600);
     font-size: var(--font-m-medium);
 }
 
@@ -38,7 +36,7 @@
     height: 3px;
     margin-bottom: 4rem;
     background-color: var(--primary-solid);
-    background-image: var(--grandient-blue);
+    background-image: var(--gradient-primary);
 }
 
 .collection__figure{

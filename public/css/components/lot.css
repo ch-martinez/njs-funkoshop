@@ -17,12 +17,18 @@
 .lot__btn{
     cursor: pointer;
     width: 25px;
+    color: var(--font-light-solid);
     font-size: var(--font-m-medium);
     font-weight: 600;
     border: none;
     outline: none;
-    background-color: var(--primary-500);
+    background-color: var(--secondary-600);
+    transition: background-color var(--transition-01);
 }
+
+        .lot__btn:hover{
+            background-color: var(--secondary-800);
+        }
 
 .lot__btn--add{
     font-weight: 500;
@@ -40,11 +46,10 @@
     margin: 0;
     text-align: center;
     background-color: var(--bg-light-solid);
-    border: 1px solid var(--primary-500);
+    border: 1px solid var(--secondary-600);
     color: var(--font-dark-900);
     font-size: var(--font-medium);
     font-weight: 500;
-    transition: var(--transition-border-outline);
 }
 
     .lot__input:focus{

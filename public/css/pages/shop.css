@@ -25,6 +25,10 @@
     color: var(--font-dark-700);
 }
 
+.search-bar:hover{
+    color: var(--primary-solid);
+}
+
 .order{
     display: flex;
     align-items: center;
