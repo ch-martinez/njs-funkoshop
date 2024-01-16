@@ -24,23 +24,25 @@
     --gradient-primary: linear-gradient(0deg,#ff6491,#ff8d72);
     --gradient-secondary: linear-gradient(0deg,#ba54f5,#e14eca);
 
-    --gradient-dark-solid: linear-gradient(36deg, rgba(29,37,59,0.7) 0%, rgba(29,37,59,1) 100%);
+    --gradient-gray: linear-gradient(36deg, rgba(158, 158, 158, 0.7) 0%, rgba(158, 158, 158, 1) 100%);
 
     /* Shadows */
     --shadow-btn: 0 4px 6px rgba(50,50,93,.21), 0 1px 3px rgba(0,0,0,.18);
+    --shadow-navbar: 0 1px 5px 0 rgba(0,0,0,.4);
     --shadow-primary: 0 1px 20px 0 rgba(0,0,0,.1);
 
     /* Background */
     --bg-light-solid: rgb(255, 255, 255);
     --bg-light-soft: #f5f6fa;
 
-    --bg-dark-solid: #1d253b;
+    --bg-dark-solid: #212529;
     --bg-dark-soft: #30343F;
 
     /* Border */
-    --border-input: rgba(29,37,59,.5);
+    --border-dark-solid: rgba(29,37,59,1);
+    --border-dark-500: rgba(29,37,59,.5);
+    --border-dark-200: rgba(29,37,59,.2);
     --border-dark-100: rgba(29,37,59,.1);
-    --input-border-soft: rgba(29,37,59,.2);
 
     /* Font */
     --font-light-solid: #FFF;
@@ -49,12 +51,11 @@
     --font-light-600: rgba(255,255,255,.6);
 
     --font-dark-solid: #1d253b;
+    --font-dark-900: rgba(34,42,66,.9);
     --font-dark-800: rgba(34,42,66,.8);
     --font-dark-600: rgba(34,42,66,.6);
     --font-dark-400: rgba(34,42,66,.4);
     --font-dark-200: rgba(34,42,66,.2);
-
-    --font-link: rgba(29, 140, 248, 0.7);
 
     /* Typography */
     --font-base: 'Poppins', sans-serif;
@@ -93,10 +94,13 @@
     --transition-border-outline: outline .2s ease-in-out, border .3s ease-in-out;
     --transition-color: color .2s ease-in-out;
     --transition-bg: background-color .1s ease-in-out;
+    --transition-01: .1s ease-in-out;
+    --transition-02: .2s ease-in-out;
+    --transition-03: .3s ease-in-out;
 
     /* Animations */
 
-    /* Misc */
+    /* Border radius */
     --br-primary: 0.7rem;
     --br-secondary: 0.5rem;
 }
