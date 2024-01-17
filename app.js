@@ -3,6 +3,13 @@ const app = express()
 const PORT = 3000
 const path = require('path')
 
+/* const bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json()); */
+
+app.use(express.urlencoded({ extended: false }));
+
 // Se define la carpeta 'public' para archivos estaticos
 app.use(express.static(path.resolve(__dirname,'public')))
 app.use(express.json())
@@ -31,12 +38,14 @@ const mainRouter = require('./src/routers/mainRouter')
 const shopRouter = require('./src/routers/shopRouter')
 const authRouter = require('./src/routers/authRouter')
 const adminRouter = require('./src/routers/adminRouter')
+const cartRouter = require('./src/routers/cartRouter')
 
 /* Routers */
 app.use('/', mainRouter)
 app.use('/shop', shopRouter)
 app.use('/auth', authRouter)
 app.use('/admin', adminRouter)
+app.use('/cart',cartRouter)
 
 
 app.listen(PORT,() => {
