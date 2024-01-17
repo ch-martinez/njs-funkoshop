@@ -3,12 +3,9 @@ const app = express()
 const PORT = 3000
 const path = require('path')
 
-/* const bodyParser = require('body-parser');
-
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json()); */
-
+//Configuracion para la lectura de formularios y archivos json
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json())
 
 // Se define la carpeta 'public' para archivos estaticos
 app.use(express.static(path.resolve(__dirname,'public')))
