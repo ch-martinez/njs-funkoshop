@@ -1,0 +1,14 @@
+.notfound__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notfound__picture{
+    max-width: 200px;
+}
+
+.notfound__msg{
+    font-size: var(--font-large);
+    font-weight: 500;
+}
