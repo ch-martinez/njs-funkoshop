@@ -43,6 +43,7 @@ app.use('/shop', shopRouter)
 app.use('/auth', authRouter)
 app.use('/admin', adminRouter)
 app.use('/cart',cartRouter)
+app.use('',(req,res) => {res.render('pages/main/notfound',{page:{title:'404 - Pagina no encontrada'}})})
 
 
 app.listen(PORT,() => {
