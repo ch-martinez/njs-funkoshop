@@ -18,7 +18,17 @@ const getCollectionByIDFromBD = async (id) => {
     }
 }
 
+const getHomeCollectionsListFromDB = async () => {
+    try {
+        const [response] = await pool.query('SELECT c.* FROM home_collections hc JOIN collection c on hc.collection_id = c.collection_id ORDER BY hc.hc_order ')
+        return response
+    } catch (error) {
+        throw(error)
+    }
+}
+
 module.exports = {
     getAllCollectionsFromBD,
-    getCollectionByIDFromBD
+    getCollectionByIDFromBD,
+    getHomeCollectionsListFromDB
 }
