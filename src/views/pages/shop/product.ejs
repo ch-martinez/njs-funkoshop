@@ -11,15 +11,15 @@
                 <p class="product__description"><%= product.product_description %></p>
                 <div class="product__price__container">
                     <span class="product__discount">$ <%= product.product_discount %>  -  </span>
-                    <span class="product__price">$ <%= product.product_price %></span>
+                    <span class="product__price">$ <%= product.cd_total %></span>
                 </div>
-                <form class="lot" method="post" action="/shop/cart">
+                <form class="lot" method="post" action="/shop/cart/<%= product.product_id %>">
                     <div class="lot__inputs">
                         <button class="lot__btn lot__btn--substract" type="button">-</button>
-                        <input class="lot__input --hide-arrows" type="number" value="1" min="1" max="<%= product.product_stock %>">
+                        <input class="lot__input --hide-arrows" type="number" value="1" min="1" max="<%= product.product_stock %>" name="lot">
                         <button class="lot__btn lot__btn--add" type="button">+</button>
                     </div>
-                    <button class="btn" type="submit">Agregar al carrito</button>
+                    <button class="btn btn--secondary" type="submit">Agregar al carrito</button>
                 </form>
             </section>
         </article>
