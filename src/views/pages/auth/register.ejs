@@ -1,0 +1,82 @@
+<main class="main--auth">
+    <h2 class="auth__title">Registrar cuenta</h2>
+    <section class="auth">
+
+        <form class="auth-form auth-form--register" action="/admin" >
+
+            <div class="auth-form__row">
+                <div class="auth-form__box">
+                    <label for="name" class="label">Nombre</label>
+                    <input class="input" type="text" name="name" id="name" required>
+                </div>
+                <div class="auth-form__box">
+                    <label for="lastname" class="label">Apellido</label>
+                    <input class="input" type="text" name="lastname" id="lastname" required>
+                </div>
+            </div>
+
+            <div class="auth-form__row">
+                <div class="auth-form__box">
+                    <label for="email" class="label">Email</label>
+                    <input class="input" type="email" name="email" id="email" required>
+                </div>
+                <div class="auth-form__box">
+                    <label for="tel" class="label">Telefono</label>
+                    <input class="input" type="tel" name="tel" id="tel" placeholder="Teléfono" required>
+                </div>
+            </div>
+
+            <div class="auth-form__row auth-form__row--adress">
+                <div class="auth-form__box">
+                    <label for="adress" class="label">Calle</label>
+                    <input class="input" type="text" name="adress_street" id="adress_street" required>
+                </div>
+                <div class="auth-form__box">
+                    <label for="tel" class="label">Altura</label>
+                    <input class="input --hide-arrows" type="number" name="adress_nro" id="adress_nro" required>
+                </div>
+                <div class="auth-form__box">
+                    <label for="adress" class="label">Datos adicionales</label>
+                    <input class="input" type="text" name="adress_detail" id="adress_detail" required>
+                </div>
+            </div>
+
+            <div class="auth-form__row auth-form__row--adress-location">
+                <div class="auth-form__box">
+                    <label for="adress" class="label">Ciudad</label>
+                    <input class="input" type="text" name="adress_city" id="adress_city" required>
+                </div>
+                <div class="auth-form__box">
+                    <label for="adress" class="label">Provincia</label>
+                    <input class="input" type="text" name="adress_state" id="adress_state" required>
+                </div>
+                <div class="auth-form__box">
+                    <label for="tel" class="label">Codigo postal</label>
+                    <input class="input --hide-arrows" type="number" name="adress_zipCode" id="adress_zipCode" required>
+                </div>
+            </div>
+
+            <div class="auth-form__row">
+                <div class="auth-form__box">
+                    <label for="password" class="label">Contraseña</label>
+                    <input class="input" type="password" name="password" id="password" required>
+                </div>
+                <div class="auth-form__box">
+                    <label for="password" class="label">Confirmar Contraseña</label>
+                    <input class="input" type="password" name="password" id="password" required>
+                </div>
+            </div>
+
+            <div class="auth-form__row">
+                <div class="auth-form__box auth__terms">
+                    <input type="checkbox" name="" id="" required>
+                    <span>Aceptar <a class="auth__link" href="#">términos y condiciones</a></span>
+                </div>
+            </div>
+
+            <div class="auth-form__row">
+                <button class="btn-square auth-form__btn" type="submit">Registrar</button>
+            </div>
+        </form>
+    </section>
+</main>
