@@ -10,7 +10,15 @@
 </head>
 <body>
     <%- include('../partials/headerAdmin.ejs') %>
-    <%- body %>
+    <main>
+        <div class=" container-admin">
+            <%- include('../components/admin/sidebar.ejs')%>
+    
+            <section class="content">
+                <%- body %>
+            </section>
+        </div>
+    </main>
     <%# include('../partials/footerAdmin.ejs') %>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
     <script src="/scripts/simpleDatatableConfig.js"></script>
