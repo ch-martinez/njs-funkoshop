@@ -1,15 +1,20 @@
 const express = require('express')
 const router = express.Router()
-const {
-    adminView,
-    productsView,
-    collectionsView,
-    usersViews
-} = require('../controllers/adminController')
+const adminController = require('../controllers/adminController')
 
-router.get('/', adminView)
-router.get('/products', productsView)
-router.get('/collections', collectionsView)
-router.get('/users', usersViews)
+router.get('/', adminController.adminView)
+
+// Productos
+router.get('/products', adminController.productsView)
+router.get('/product/add', adminController.productAddView)
+router.get('/product/edit/:id', adminController.productEditView)
+
+//Colecciones
+router.get('/collections', adminController.collectionsView)
+router.get('/collection/add', adminController.collectionAddView)
+router.get('/collection/edit/:id', adminController.collectionEditView)
+
+//Usuarios
+router.get('/users', adminController.usersViews)
 
 module.exports = router
