@@ -1,57 +1,50 @@
-<main>
-    <div class=" container-admin">
-        <%- include('../../components/admin/sidebar.ejs')%>
-
-        <section class="content">
-            <article class="card-admin">
-                MENU DE BUSQUEDA
-            </article>
-            <article class="card-admin">
-                <table id="adminTable" class="table-admin">
-                    <thead class="table-admin__head">
-                        <tr class="table-admin__tr">
-                            <th class="table-admin__td">ID</t>
-                            <th class="table-admin__td">Nombre</th>
-                            <th class="table-admin__td">Apellido</th>
-                            <th class="table-admin__td">Correo</th>
-                            <th class="table-admin__td">Contraseña</th>
-                            <th class="table-admin__td" data-sortable="false"></th>
-                            <th class="table-admin__td" data-sortable="false"></th>
-                        </tr>
-                    </thead>
-                    <tbody class="table-admin__body">
-                        <% users.forEach((user)=> { %>
-                            <tr class="table-admin__tr">
-                                <td class="table-admin__td">
-                                    <%= user.user_id %>
-                                </td>
-                                <td class="table-admin__td">
-                                    <%= user.user_name %>
-                                </td>
-                                <td class="table-admin__td">
-                                    <%= user.user_lastname %>
-                                </td>
-                                <td class="table-admin__td">
-                                    <%= user.user_email %>
-                                </td>
-                                <td class="table-admin__td">
-                                    <%= user.user_password %>
-                                </td>
-                                <td class="table-admin__td table-admin__icon" width="30">
-                                    <a class="table-admin__icon--edit" href="/admin/users/edit/:<%= users.users_id %>">
-                                        <iconify-icon icon="akar-icons:edit"></iconify-icon>
-                                    </a>
-                                </td>
-                                <td class="table-admin__td table-admin__icon">
-                                    <a class="table-admin__icon--delet" href="">
-                                        <iconify-icon icon="akar-icons:circle-x"></iconify-icon>
-                                    </a>
-                                </td>
-                            </tr>
-                        <% }) %>
-                    </tbody>
-                </table>
-            </article>
-        </section>
-    </div>
-</main>
+<article class="card-admin card-admin--head">
+    <h2 class="content__title">Usuarios</h2>
+    <a class="btn-square" href="/admin/product/add">Nuevo usuario</a>
+</article>
+<article class="card-admin">
+    <table id="adminTable" class="table-admin">
+        <thead class="table-admin__head">
+            <tr class="table-admin__tr">
+                <th class="table-admin__td">ID</t>
+                <th class="table-admin__td">Nombre</th>
+                <th class="table-admin__td">Apellido</th>
+                <th class="table-admin__td">Correo</th>
+                <th class="table-admin__td">Contraseña</th>
+                <th class="table-admin__td" data-sortable="false"></th>
+                <th class="table-admin__td" data-sortable="false"></th>
+            </tr>
+        </thead>
+        <tbody class="table-admin__body">
+            <% users.forEach((user)=> { %>
+                <tr class="table-admin__tr">
+                    <td class="table-admin__td">
+                        <%= user.user_id %>
+                    </td>
+                    <td class="table-admin__td">
+                        <%= user.user_name %>
+                    </td>
+                    <td class="table-admin__td">
+                        <%= user.user_lastname %>
+                    </td>
+                    <td class="table-admin__td">
+                        <%= user.user_email %>
+                    </td>
+                    <td class="table-admin__td">
+                        <%= user.user_password %>
+                    </td>
+                    <td class="table-admin__td table-admin__icon" width="30">
+                        <a class="table-admin__icon--edit" href="/admin/users/edit/:<%= users.users_id %>">
+                            <iconify-icon icon="akar-icons:edit"></iconify-icon>
+                        </a>
+                    </td>
+                    <td class="table-admin__td table-admin__icon">
+                        <a class="table-admin__icon--delet" href="">
+                            <iconify-icon icon="akar-icons:circle-x"></iconify-icon>
+                        </a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</article>

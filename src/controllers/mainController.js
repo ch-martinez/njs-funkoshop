@@ -1,6 +1,5 @@
-const collectionsModels = require('../models/collectionsModels')
-
-const productsModels = require('../models/productsModels')
+const collectionsModels = require('../models/collectionsModel')
+const productsModels = require('../models/productsModel')
 
 const homeView = async (req, res) => {
     const products = await productsModels.getAllProductsFromBD()

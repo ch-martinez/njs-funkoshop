@@ -1,0 +1,72 @@
+<main class="main--container">
+    <section class="container container--cart">
+        <section class="cart">
+            <h1 class="cart__title">Carrito de compras</h1>
+            <ul class="cart__ul">
+                <li class="cart__li">
+                    <div class="cart-item__box cart-item__box--head">Producto</div>
+                    <div class="cart-item__box cart-item__box--head">Cantidad</div>
+                    <div class="cart-item__box cart-item__box--head">Precio</div>
+                </li>
+                <% cart.list.forEach((product) => {%>
+                    <li class="cart__li">
+
+                        <div class="cart-item__box">
+                            <a href="/shop/item/<%= product.product_id %>">
+                                <div class="cart-item__product">
+                                    <figure class="cart-item__figure">
+                                        <img src="<%= product.product.img %>" alt="">
+                                    </figure>
+                                    <div class="cart-item__product__content">
+                                        <span class="cart-item__collection"><%= product.product.collection %></span>
+                                        <span class="cart-item__name"><%= product.product.name %></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="cart-item__box">
+                            <div class="lot__inputs lot__inputs--cart">
+                                <button class="lot__btn lot__btn--substract" type="button">-</button>
+                                <input class="lot__input --hide-arrows" type="number" value="<%=product.lot%>" min="1" max="<%= product.product.stock %>">
+                                <button class="lot__btn lot__btn--add" type="button">+</button>
+                            </div>
+                        </div>
+
+                        <div class="cart-item__box">
+                            $ <%= product.total%>
+                        </div>
+
+                        <div class="cart-item__box">
+                            <a class="cart-item__delet" href="">
+                                <iconify-icon icon="akar-icons:circle-x"></iconify-icon>
+                            </a>
+                        </div>
+                    </li>
+                <%})%>
+            </ul>
+
+        </section>
+
+        <aside class="resume">
+            <h2 class="resume__title">RESUMEN COMPRA</h2>
+            <div class="resume__content">
+                <span class="resume__key">Subtotal</span>
+                <span class="resume__value">$ <%= cart.subtotal %></span>
+            </div>
+            <div class="resume__content">
+                <span class="resume__key">Envio</span>
+                <span class="resume__value">$ <%= cart.ship %></span>
+            </div>
+            <div class="resume__content">
+                <span class="resume__key">Cupon descuento</span>
+                <span class="resume__value"><%= cart.coupon %></span>
+            </div>
+            <div class="resume__content">
+                <span class="resume__key">TOTAL</span>
+                <span class="resume__value">$ <%= cart.total %></span>
+            </div>
+            <a href="#" class="btn-square btn--secondary btn--cart">Realizar compra</a>
+        </aside>
+    </section>
+</main>

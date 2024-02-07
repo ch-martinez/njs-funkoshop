@@ -13,13 +13,13 @@
                     <span class="product__discount">$ <%= product.product_discount %>  -  </span>
                     <span class="product__price">$ <%= product.cd_total %></span>
                 </div>
-                <form class="lot" method="post" action="/shop/cart/<%= product.product_id %>">
+                <form id="product" class="lot" method="post" data-id="<%= product.product_id %>">
                     <div class="lot__inputs">
                         <button class="lot__btn lot__btn--substract" type="button">-</button>
-                        <input class="lot__input --hide-arrows" type="number" value="1" min="1" max="<%= product.product_stock %>" name="lot">
+                        <input class="lot__input --hide-arrows" type="number" value="1" min="1" max="<%= product.product_stock %>" name="lot" id="product_quantity">
                         <button class="lot__btn lot__btn--add" type="button">+</button>
                     </div>
-                    <button class="btn btn--secondary" type="submit">Agregar al carrito</button>
+                    <button id="addToCart" class="btn btn--secondary" type="submit">Agregar al carrito</button>
                 </form>
             </section>
         </article>
