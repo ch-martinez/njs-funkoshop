@@ -1,0 +1,50 @@
+<h2 class="content__title">Nueva coleccion</h2>
+<article class="card-admin card-admin--add">
+    <form class="form-admin" action="">
+        <!-- FILA -->
+        <div class="form-admin__row">
+            <div class="form-admin__box">
+                <label for="collection_name" class="label">Nombre</label>
+                <input type="text" class="input" id="collection_name"
+                    name="collection_name">
+            </div>
+        </div>
+
+        <!-- FILA -->
+        <div class="form-admin__row form-admin__row-3">
+            <div class="form-admin__box">
+                <label for="collection_description" class="label">Descripcion</label>
+                <textarea name="collection_description" id="collection_description" class="input"></textarea>
+            </div>
+        </div>
+
+        <!-- FILA -->
+        <div class="form-admin__row">
+
+            <div class="form-admin__box">
+                <label for="collection_sku" class="label">SKU</label>
+                <input type="text" class="input" id="collection_sku" name="collection_sku">
+            </div>
+        </div>
+
+        <!-- FILA -->
+        <div class="form-admin__row">
+            <div class="form-admin__box">
+                <label for="img_front" class="label">Portada</label>
+                <div class="form-admin__box-img">
+                    <label for="img_front" class="form-admin__figure">
+                        <img src="/img/funkos/harry-potter/harry-1.webp" alt="" srcset="">
+                    </label>
+                    <input type="file" name="img_front" id="img_front">
+                </div>
+            </div>
+        </div>
+
+        <!-- FILA -->
+        <div class="form-admin__row">
+            <!-- BOTONES -->
+            <button class="btn-square" type="submit">Aceptar</button>
+            <a class="btn-square btn--gray" href="/admin/collections">Cancelar</a>
+        </div>
+    </form>
+</article>
