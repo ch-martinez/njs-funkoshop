@@ -41,7 +41,8 @@ const collectionEditView = async (req, res) => {
 
 const collectionsHomeView = async (req, res) => {
     const collections = await collectionsModels.getAllCollectionsHomeFromDB()
-    res.render('pages/admin/collectionsHomeAdmin', {layout: 'layouts/adminLayout', collections})
+    const isCollectionHome = true
+    res.render('pages/admin/collectionsHomeAdmin', { isCollectionHome, collections, layout: 'layouts/adminLayout'})
 }
 
 // Actualiza el listado de coleciones mostrados en home
