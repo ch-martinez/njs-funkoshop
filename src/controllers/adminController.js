@@ -39,6 +39,19 @@ const collectionEditView = async (req, res) => {
     res.render('pages/admin/edit/collectionEditView', {collection, layout: 'layouts/adminLayout'})
 }
 
+const collectionsHomeView = async (req, res) => {
+    const collections = await collectionsModels.getAllCollectionsHomeFromDB()
+    res.render('pages/admin/collectionsHomeAdmin', {layout: 'layouts/adminLayout', collections})
+}
+
+// Actualiza el listado de coleciones mostrados en home
+const collectionsHomeUpdate = (req, res) => {
+    req.body.forEach(collection => {
+        collectionsModels.updateCollectionHome(collection)
+    })
+    res.status(200)
+}
+
 /* Users */
 const usersViews = async (req, res) => {
     const users = await usersModels.getAllUsersFromDB()
@@ -53,5 +66,7 @@ module.exports = {
     collectionsView,
     collectionAddView,
     collectionEditView,
+    collectionsHomeView,
+    collectionsHomeUpdate,
     usersViews
 }
