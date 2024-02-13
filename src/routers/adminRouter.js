@@ -13,6 +13,8 @@ router.get('/product/edit/:id', adminController.productEditView)
 router.get('/collections', adminController.collectionsView)
 router.get('/collection/add', adminController.collectionAddView)
 router.get('/collection/edit/:id', adminController.collectionEditView)
+router.get('/collections/home', adminController.collectionsHomeView)
+router.post('/collections/home', adminController.collectionsHomeUpdate)
 
 //Usuarios
 router.get('/users', adminController.usersViews)
