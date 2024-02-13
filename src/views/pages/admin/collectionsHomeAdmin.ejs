@@ -1,0 +1,55 @@
+<h2 class="content__title">Coleciones en home</h2>
+<article class="card-admin card-admin--add">
+    <form class="form-admin" action="">
+        <table class="table-admin">
+            <thead class="table-admin__head">
+                <tr class="table-admin__tr">
+                    <th class="table-admin__td">Orden</th>
+                    <th class="table-admin__td">Nombre</th>
+                    <th class="table-admin__td" colspan="2">Descripcion</th>
+                    <th class="table-admin__td">Portada</th>
+                    <th class="table-admin__td">Mostrar</th>
+                    <th class="table-admin__td">Editar</th>
+                    <th class="table-admin__td"></th>
+                </tr>
+            </thead>
+            <tbody class="table-admin__body">
+                    <% collections.forEach((collection) => { %>
+                        <tr class="table-admin__tr" data-id="<%= collection.collection_id %>">
+                            <td id="ch_order" class="table-admin__td table-admin__td--center">
+                                <%= collection.ch_order %>
+                            </td>
+                            <td class="table-admin__td">
+                                <%= collection.collection_name %>
+                            </td>
+                            <td class="table-admin__td" colspan="2">
+                                <%= collection.collection_description %>
+                            </td>
+                            <td class="table-admin__td">
+                                <picture class="table-admin__img">
+                                    <img src="<%= collection.collection_img %>" alt="" srcset="">
+                                </picture>
+                            </td>
+                            <td id="ch_active" class="table-admin__td table-admin__icon table-admin__td--center">
+                                <input class="input--checkbox" type="checkbox" name="" id=""  <% if(collection.ch_active == 1) {%> checked <% } %> >
+                            </td>
+                            <td class="table-admin__td table-admin__icon">
+                                <a class="table-admin__icon--edit" href="/admin/collection/edit/<%= collection.collection_id %>">
+                                    <iconify-icon icon="akar-icons:edit"></iconify-icon>
+                                </a>
+                            </td>
+                            <td class="table-admin__td table-admin__icon">
+                                <iconify-icon class="table-admin__icon--move" icon="akar-icons:two-line-horizontal"></iconify-icon>
+                            </td>
+                        </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+        <!-- FILA -->
+        <div class="form-admin__row">
+            <!-- BOTONES -->
+            <button class="btn-square" type="submit">Guardar</button>
+            <a class="btn-square btn--gray" href="/admin/collections">Cancelar</a>
+        </div>
+    </form>
+</article>

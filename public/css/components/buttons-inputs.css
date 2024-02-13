@@ -143,3 +143,25 @@
     margin: 0;
     -webkit-appearance: none;
 }
+
+.input--checkbox{
+    width: 20px;
+    height: 20px;
+    outline: solid 2px;
+    outline-offset: -2px;
+    -webkit-transition: height 0.5s ease-in;
+    -moz-transition: height 0.5s ease-in;
+    -ms-transition: height 0.5s ease-in;
+    -o-transition: height 0.5s ease-in;
+    transition: height 0.5s ease-in;
+}
+
+.input--checkbox:checked{
+    accent-color: red;
+    outline: none;
+    -webkit-transition: height 0.5s ease-in;
+    -moz-transition: height 0.5s ease-in;
+    -ms-transition: height 0.5s ease-in;
+    -o-transition: height 0.5s ease-in;
+    transition: height 0.5s ease-in;
+}

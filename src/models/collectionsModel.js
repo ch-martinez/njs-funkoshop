@@ -18,10 +18,29 @@ const getCollectionByIDFromBD = async (id) => {
     }
 }
 
-const getHomeCollectionsListFromDB = async () => {
+
+// Collections home
+const getAllCollectionsHomeFromDB = async () => {
     try {
-        const [response] = await pool.query('SELECT c.* FROM home_collections hc JOIN collection c on hc.collection_id = c.collection_id ORDER BY hc.hc_order ')
+        const [response] = await pool.query('SELECT c.*, ch.* FROM collections_home ch JOIN collection c on ch.collection_id = c.collection_id ORDER BY ch.ch_order ')
         return response
+    } catch (error) {
+        throw(error)
+    }
+}
+
+const getCollectionsHomeActiveFromDB = async () => {
+    try {
+        const [response] = await pool.query('SELECT c.*, ch.* FROM collections_home ch JOIN collection c on ch.collection_id = c.collection_id WHERE ch_active = 1 ORDER BY ch.ch_order ')
+        return response
+    } catch (error) {
+        throw(error)
+    }
+}
+
+const updateCollectionHome = async (collection) => {
+    try {
+        await pool.query(`UPDATE collections_home ch SET ch_order = ${collection.ch_order},ch_active = ${collection.ch_active} WHERE collection_id = ${collection.collection_id};`)
     } catch (error) {
         throw(error)
     }
@@ -30,5 +49,7 @@ const getHomeCollectionsListFromDB = async () => {
 module.exports = {
     getAllCollectionsFromBD,
     getCollectionByIDFromBD,
-    getHomeCollectionsListFromDB
+    getAllCollectionsHomeFromDB,
+    getCollectionsHomeActiveFromDB,
+    updateCollectionHome
 }

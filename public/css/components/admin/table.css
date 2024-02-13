@@ -10,6 +10,7 @@
     color: var(--font-dark-solid);
     font-weight: 500;
     text-transform: uppercase;
+    text-align: left;
 }
 
 /* Fila de tabla */
@@ -26,6 +27,22 @@
 .table-admin__td{
     padding: var(--spacing-4) 0;
     vertical-align: middle !important;
+}
+
+.table-admin__td--btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-admin__td--center{
+    text-align: center;
+    font-weight: 600;
+}
+
+.table-admin__img img{
+    max-width: 75px;
 }
 
 .table-admin__td:nth-child(6){
@@ -49,6 +66,10 @@
 
     .table-admin__icon--edit:hover{
         color: var(--color-info);
+    }
+
+    .table-admin__icon--move:hover{
+        color: var(--secondary-solid);
     }
 
 /* Simple-Datatables CUSTOM */
