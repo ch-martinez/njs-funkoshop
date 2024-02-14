@@ -45,6 +45,25 @@ const addItemToCart = (id,quantity) => {
     localStorage.setItem('cart',JSON.stringify(cart))
 }
 
+/* BD */
+const sendCartToBD = async () => {
+    const options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(localStorage.cart),
+        credentials: omit,
+    };
+    try {
+        const res = await fetch('/api/cart',options)
+            if (!res.ok){
+                throw new Error('Se produjo un error')
+            }
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 /* Eventos */
 form.onsubmit = (e) => {
