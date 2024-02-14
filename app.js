@@ -36,6 +36,7 @@ const shopRouter = require('./src/routers/shopRouter')
 const authRouter = require('./src/routers/authRouter')
 const adminRouter = require('./src/routers/adminRouter')
 const cartRouter = require('./src/routers/cartRouter')
+const apiRouter = require('./src/routers/apiRouter')
 
 /* Routers */
 app.use('/', mainRouter)
@@ -43,6 +44,7 @@ app.use('/shop', shopRouter)
 app.use('/auth', authRouter)
 app.use('/admin', adminRouter)
 app.use('/cart',cartRouter)
+app.use('/api', apiRouter)
 app.use('',(req,res) => {res.render('pages/main/notfound',{page:{title:'404 - Pagina no encontrada'}})})
 
 
