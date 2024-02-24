@@ -22,32 +22,32 @@
                             <a href="/shop/item/<%= product.product_id %>">
                                 <div class="cart-item__product">
                                     <figure class="cart-item__figure">
-                                        <img src="<%= product.product.img %>" alt="">
+                                        <img src="<%= product.img_front %>" alt="">
                                     </figure>
                                     <div class="cart-item__product__content">
-                                        <span class="cart-item__collection"><%= product.product.collection %></span>
-                                        <span class="cart-item__name"><%= product.product.name %></span>
+                                        <span class="cart-item__collection"><%= product.collection_name %></span>
+                                        <span class="cart-item__name"><%= product.product_name %></span>
                                     </div>
                                 </div>
                             </a>
                         </div>
 
                         <div class="cart-item__box">
-                            <div class="lot__inputs lot__inputs--cart">
+                            <div class="lot__inputs lot__inputs--cart" data-id="<%= product.product_id %>">
                                 <button class="lot__btn lot__btn--substract" type="button">-</button>
-                                <input class="lot__input --hide-arrows" type="number" value="<%=product.lot%>" min="1" max="<%= product.product.stock %>">
+                                <input class="lot__input --hide-arrows" type="number" value="<%=product.cd_lot%>" min="1" max="<%= product.product_stock %>">
                                 <button class="lot__btn lot__btn--add" type="button">+</button>
                             </div>
                         </div>
 
                         <div class="cart-item__box">
-                            $ <%= product.total%>
+                            $ <%= product.product_price %>
                         </div>
 
                         <div class="cart-item__box">
-                            <a class="cart-item__delet" href="">
+                            <button class="cart-item__delet" data-id="<%= product.product_id %>">
                                 <iconify-icon icon="akar-icons:circle-x"></iconify-icon>
-                            </a>
+                            </button>
                         </div>
                     </li>
                 <%})%>
@@ -59,19 +59,19 @@
             <h2 class="resume__title">RESUMEN COMPRA</h2>
             <div class="resume__content">
                 <span class="resume__key">Subtotal</span>
-                <span class="resume__value">$ <%= cart.subtotal %></span>
+                <span class="resume__value">$ <%= cart.resume.cart_subtotal %></span>
             </div>
             <div class="resume__content">
                 <span class="resume__key">Envio</span>
-                <span class="resume__value">$ <%= cart.ship %></span>
+                <span class="resume__value">$ <%= cart.resume.cart_ship %></span>
             </div>
             <div class="resume__content">
                 <span class="resume__key">Cupon descuento</span>
-                <span class="resume__value"><%= cart.coupon %></span>
+                <span class="resume__value"><%= cart.resume.cart_coupon %></span>
             </div>
             <div class="resume__content">
                 <span class="resume__key">TOTAL</span>
-                <span class="resume__value">$ <%= cart.total %></span>
+                <span class="resume__value">$ <%= cart.resume.cart_total %></span>
             </div>
             <a href="#" class="btn-square btn--secondary btn--cart">Realizar compra</a>
         </aside>
