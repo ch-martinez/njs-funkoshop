@@ -1,6 +1,9 @@
 const form = document.querySelector('#product')
 const cartNavbar = document.querySelector('#cartNavbar')
 const btnDelet = document.querySelectorAll('.cart-item__delet')
+const lotInputs = document.querySelectorAll('.lot__inputs')
+const cartResumeSubtotal = document.querySelector('#resumeSubtotal')
+const cartResumeTotal = document.querySelector('#resumeTotal')
 
 /* Funciones auxiliares */
 
@@ -125,7 +128,21 @@ const deletItemInCart = async (product_id) => {
 
 
 /* Eventos */
-
+lotInputs.forEach( input => {
+    input.addEventListener('click', (e) => {
+        const id = e.target.parentNode.dataset.id
+        if (e.target.classList.contains('lot__btn--substract')) {
+            let input = e.target.nextElementSibling
+            if (input.value > 1) input.value-- 
+            console.log(id)
+        }
+        if (e.target.classList.contains('lot__btn--add')) {
+            let input = e.target.previousElementSibling
+            if (input.value < input.max) input.value++ 
+            console.log(id)
+        }
+    })
+})
 cartNavbar.addEventListener('click', () => {
     console.log('ingreso')
 })
@@ -144,3 +161,4 @@ form.addEventListener('submit', (e) => {
     let price = Number(e.target.dataset.price)
     addItemToCart(id, quantity, price)
 })
+
