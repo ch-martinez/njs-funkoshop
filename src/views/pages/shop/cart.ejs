@@ -57,7 +57,7 @@
 
         <aside class="resume">
             <h2 class="resume__title">RESUMEN COMPRA</h2>
-            <div class="resume__content">
+            <div id="resumeSubtotal" class="resume__content">
                 <span class="resume__key">Subtotal</span>
                 <span class="resume__value">$ <%= cart.resume.cart_subtotal %></span>
             </div>
@@ -69,7 +69,7 @@
                 <span class="resume__key">Cupon descuento</span>
                 <span class="resume__value"><%= cart.resume.cart_coupon %></span>
             </div>
-            <div class="resume__content">
+            <div id="resumeTotal" class="resume__content">
                 <span class="resume__key">TOTAL</span>
                 <span class="resume__value">$ <%= cart.resume.cart_total %></span>
             </div>
