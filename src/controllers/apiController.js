@@ -13,6 +13,7 @@ const updateProductInCartDB = async (req, res) => {
 
 const updateCartDB = async (req, res) => {
     cartController.updateCartDB(req.body)
+    res.send()
 }
 
 const deletProductInCartDB = async(req, res) => {
