@@ -11,17 +11,6 @@
     z-index: 100;
 }
 
-/* .header{
-    background-color: var(--bg--header);
-    backdrop-filter: saturate(180%) blur(20px);
-    position: fixed;
-    z-index: 10;
-    width: 100vw;
-    padding: 0 28px;
-    line-height: 50px;
-    border-bottom: 1px solid var(--border);
-} */
-
 .navbar{
     width: 100%;
     padding: 1.5rem 1rem;
@@ -69,6 +58,9 @@
         box-shadow: var(--shadow-navbar);
     }
     
+.navbar__link--icon{
+    position: relative;
+}
 
 .navbar__link--icon iconify-icon{
     vertical-align: text-top;
@@ -84,6 +76,20 @@
         background-color: var(--primary-solid);
         box-shadow: var(--shadow-navbar);
     }
+
+.navbar__cart-items{
+    position: absolute;
+    right: 0;
+    display: flex;
+    place-content: center;
+    height: 20px;
+    width: 20px;
+    border-radius: 50px;
+    background-color: var(--secondary-solid);
+    font-weight: 500;
+    color: var(--font-light-solid);
+    line-height: 22px;
+}
 
 /* Footer styles */
 .footer{
