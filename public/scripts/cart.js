@@ -4,6 +4,7 @@ const btnDelet = document.querySelectorAll('.cart-item__delet')
 const lotInputs = document.querySelectorAll('.lot__inputs')
 const cartResumeSubtotal = document.querySelector('#resumeSubtotal')
 const cartResumeTotal = document.querySelector('#resumeTotal')
+const cartItems = document.querySelector('.navbar__cart-items')
 
 /* Funciones auxiliares */
 
@@ -25,6 +26,7 @@ const initializeCart = () => {
 }
 
 const setQuantityItemsCart = (list) => {
+
     return list.reduce((acum, item) => acum + item.product_quantity, 0)
 }
 
@@ -38,7 +40,6 @@ const setCart = async (cart) => {
         cartDB.resume.total = setSubtotalCart(cart.list)
         cartDB.items = setQuantityItemsCart(cart.list)
 
-    console.log(cartDB)
     const options = {
         method: "POST",
         headers: {
@@ -50,6 +51,7 @@ const setCart = async (cart) => {
     const res = await fetch('/api/updateCart',options)
     if(res.ok){
         cart = cartDB
+        setCartItems()
     } else {
         throw new Error('Se produjo un error al actualizar el carrito en DB')
     }
@@ -126,6 +128,20 @@ const deletItemInCart = async (product_id) => {
     }
 }
 
+const setCartItems = () => {
+    if (JSON.parse(localStorage.cart).items != 0) {
+        console.log('REMOVE')
+        cartItems.classList.remove("--hide")
+        cartItems.innerHTML = JSON.parse(localStorage.cart).items
+    } else {
+        console.log('add')
+        cartItems.classList.add("--hide")
+    }
+}
+
+window.onload = () => {
+    setCartItems()
+}
 
 /* Eventos */
 lotInputs.forEach( input => {
@@ -134,12 +150,10 @@ lotInputs.forEach( input => {
         if (e.target.classList.contains('lot__btn--substract')) {
             let input = e.target.nextElementSibling
             if (input.value > 1) input.value-- 
-            console.log(id)
         }
         if (e.target.classList.contains('lot__btn--add')) {
             let input = e.target.previousElementSibling
             if (input.value < input.max) input.value++ 
-            console.log(id)
         }
     })
 })
