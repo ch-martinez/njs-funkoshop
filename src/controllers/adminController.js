@@ -20,7 +20,8 @@ const productAddView = async (req, res) => {
 
 const productEditView = async (req, res) => {
     const collections = await collectionsModels.getAllCollectionsFromBD()
-    const [product] = await productsModels.getProductByIDFromBD(req.params.id)
+    console.log(req.params.id)
+    const product = await productsModels.getProductByIDFromBD(req.params.id)
     res.render('pages/admin/edit/productEditView', {product, collections, layout: 'layouts/adminLayout'})
 }
 
