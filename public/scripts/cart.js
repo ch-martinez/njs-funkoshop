@@ -130,12 +130,8 @@ const deletItemInCart = async (product_id) => {
 
 const setCartItems = () => {
     if (JSON.parse(localStorage.cart).items != 0) {
-        console.log('REMOVE')
         cartItems.classList.remove("--hide")
         cartItems.innerHTML = JSON.parse(localStorage.cart).items
-    } else {
-        console.log('add')
-        cartItems.classList.add("--hide")
     }
 }
 
