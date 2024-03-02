@@ -1,0 +1,44 @@
+<article class="card-admin card-admin--head">
+    <h2 class="content__title">Proveedores</h2>
+    <a class="btn-square" href="/admin/provider/add">Nuevo Provedor</a>
+</article>
+<article class="card-admin">
+    <table id="adminTable" class="table-admin">
+        <thead class="table-admin__head">
+            <tr class="table-admin__tr">
+                <th class="table-admin__td">ID</th>
+                <th class="table-admin__td">Nombre</th>
+                <th class="table-admin__td">Telefono</th>
+                <th class="table-admin__td" colspan="2">Observacion</th>
+                <th class="table-admin__td" data-sortable="false"></th>
+                <th class="table-admin__td" data-sortable="false"></th>
+            </tr>
+        </thead>
+        <tbody class="table-admin__body">
+            <% providers.forEach((provider)=> { %>
+                <tr class="table-admin__tr">
+                    <td class="table-admin__td">
+                        <%= provider.provider_id %>
+                    </td>
+                    <td class="table-admin__td">
+                        <%= provider.provider_name %>
+                    </td>
+                    <td class="table-admin__td">
+                        <%= provider.provider_tel %>
+                    </td>
+                    <td class="table-admin__td" colspan="2"><%= provider.provider_observation %></td>
+                    <td class="table-admin__td table-admin__icon" width="30">
+                        <a class="table-admin__icon--edit" href="/admin/provider/edit/<%= provider.provider_id %>">
+                            <iconify-icon icon="akar-icons:edit"></iconify-icon>
+                        </a>
+                    </td>
+                    <td class="table-admin__td table-admin__icon">
+                        <a class="table-admin__icon--delet" href="">
+                            <iconify-icon icon="akar-icons:circle-x"></iconify-icon>
+                        </a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</article>
