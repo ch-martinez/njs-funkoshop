@@ -16,6 +16,11 @@ router.get('/collection/edit/:id', adminController.collectionEditView)
 router.get('/collections/home', adminController.collectionsHomeView)
 router.post('/collections/home', adminController.collectionsHomeUpdate)
 
+//Proveedores
+router.get('/providers', adminController.providersView)
+router.get('/provider/add', adminController.providerAddView)
+router.get('/provider/edit/:id', adminController.providerEditView)
+
 //Usuarios
 router.get('/users', adminController.usersViews)
 
