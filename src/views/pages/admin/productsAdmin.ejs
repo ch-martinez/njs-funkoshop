@@ -7,11 +7,11 @@
         <thead class="table-admin__head">
             <tr class="table-admin__tr">
                 <th class="table-admin__td">ID</th>
-                <th class="table-admin__td">SKU</th>
                 <th class="table-admin__td">Colección</th>
                 <th class="table-admin__td" colspan="2">Nombre</th>
                 <th class="table-admin__td">Precio</th>
                 <th class="table-admin__td">Stock</th>
+                <th class="table-admin__td">Proveedor</th>
                 <th class="table-admin__td" data-sortable="false"></th>
                 <th class="table-admin__td" data-sortable="false"></th>
             </tr>
@@ -21,9 +21,6 @@
                 <tr class="table-admin__tr">
                     <td class="table-admin__td">
                         <%= product.product_id %>
-                    </td>
-                    <td class="table-admin__td">
-                        <%= product.collection_sku %><%= product.product_sku %>
                     </td>
                     <td class="table-admin__td">
                         <%= product.collection_name %>
@@ -36,6 +33,9 @@
                     </td>
                     <td class="table-admin__td">
                         <%= product.product_stock %>
+                    </td>
+                    <td class="table-admin__td">
+                        <%= product.provider_name %>
                     </td>
                     <td class="table-admin__td table-admin__icon" width="30">
                         <a class="table-admin__icon--edit" href="/admin/product/edit/<%= product.product_id %>">
