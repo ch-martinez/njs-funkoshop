@@ -39,6 +39,10 @@ const registerView = (req, res) => {
     }
 }
 
+const register = (req, res) => {
+    return res.status(200).send('TODO OK')
+}
+
 //RecoverPass
 const recoverPassView = (req, res) => {
     const page = {
@@ -55,5 +59,6 @@ module.exports = {
     loginView,
     login,
     registerView,
+    register,
     recoverPassView
 }
