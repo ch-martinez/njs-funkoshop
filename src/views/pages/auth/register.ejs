@@ -2,12 +2,12 @@
     <h2 class="auth__title">Registrar cuenta</h2>
     <section class="auth">
 
-        <form class="auth-form auth-form--register" action="/admin" >
+        <form class="auth-form auth-form--register">
 
             <div class="auth-form__row">
                 <div class="auth-form__box">
                     <label for="name" class="label">Nombre</label>
-                    <input class="input" type="text" name="name" id="name" required>
+                    <input class="input" type="text" name="name" id="name" required value="TEST">
                 </div>
                 <div class="auth-form__box">
                     <label for="lastname" class="label">Apellido</label>
@@ -62,8 +62,8 @@
                     <input class="input" type="password" name="password" id="password" required>
                 </div>
                 <div class="auth-form__box">
-                    <label for="password" class="label">Confirmar Contraseña</label>
-                    <input class="input" type="password" name="password" id="password" required>
+                    <label for="passwordConfirm" class="label">Confirmar Contraseña</label>
+                    <input class="input" type="password" name="passwordConfirm" id="passwordConfirm" required>
                 </div>
             </div>
 
@@ -80,3 +80,4 @@
         </form>
     </section>
 </main>
+<script src="/scripts/authRegister.js"></script>

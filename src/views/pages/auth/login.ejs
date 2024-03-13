@@ -11,11 +11,6 @@
                 <label for="password" class="label">Contraseña</label>
                 <input class="input" type="password" name="password" id="password">
             </div>
-            <div class="auth-form__box">
-                <% if ( errors != undefined ) {%>
-                    <h1> <%= errors[0].msg %> </h1>
-                <% } %>
-            </div>
             <button class="btn-square" type="submit">Ingresar</button>
         </form>
         <footer class="auth__footer">
@@ -24,3 +19,4 @@
         </footer>
     </section>
 </main>
+<script src="/scripts/authLogin.js"></script>
