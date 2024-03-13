@@ -1,23 +1,23 @@
-const cartController = require('../models/cartModel')
+const cartModel = require('../models/cartModel')
 
 
 const addProductToCartInDB = async (req, res) => {
-    cartController.addProductToCartDB(req.body)
+    cartModel.addProductToCartDB(req.body)
     res.send()
 }
 
 const updateProductInCartDB = async (req, res) => {
-    cartController.updateCartDetailDB(req.body)
+    cartModel.updateCartDetailDB(req.body)
     res.send()
 }
 
 const updateCartDB = async (req, res) => {
-    cartController.updateCartDB(req.body)
+    cartModel.updateCartDB(req.body)
     res.send()
 }
 
 const deletProductInCartDB = async(req, res) => {
-    cartController.deletProductInCartDetailDB(req.body.product_id)
+    cartModel.deletProductInCartDetailDB(req.body.product_id)
     res.send()
 }
 
