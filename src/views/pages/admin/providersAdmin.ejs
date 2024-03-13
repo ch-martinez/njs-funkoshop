@@ -1,44 +1,34 @@
 <article class="card-admin card-admin--head">
-    <h2 class="content__title">Productos</h2>
-    <a class="btn-square" href="/admin/product/add">Nuevo producto</a>
+    <h2 class="content__title">Proveedores</h2>
+    <a class="btn-square" href="/admin/provider/add">Nuevo Provedor</a>
 </article>
 <article class="card-admin">
     <table id="adminTable" class="table-admin">
         <thead class="table-admin__head">
             <tr class="table-admin__tr">
                 <th class="table-admin__td">ID</th>
-                <th class="table-admin__td">Colección</th>
-                <th class="table-admin__td" colspan="2">Nombre</th>
-                <th class="table-admin__td">Precio</th>
-                <th class="table-admin__td">Stock</th>
-                <th class="table-admin__td">Proveedor</th>
+                <th class="table-admin__td">Nombre</th>
+                <th class="table-admin__td">Telefono</th>
+                <th class="table-admin__td" colspan="2">Observacion</th>
                 <th class="table-admin__td" data-sortable="false"></th>
                 <th class="table-admin__td" data-sortable="false"></th>
             </tr>
         </thead>
         <tbody class="table-admin__body">
-            <% products.forEach((product)=> { %>
+            <% providers.forEach((provider)=> { %>
                 <tr class="table-admin__tr">
                     <td class="table-admin__td">
-                        <%= product.product_id %>
+                        <%= provider.provider_id %>
                     </td>
                     <td class="table-admin__td">
-                        <%= product.collection_name %>
-                    </td>
-                    <td class="table-admin__td" colspan="2">
-                        <%= product.product_name %>
+                        <%= provider.provider_name %>
                     </td>
                     <td class="table-admin__td">
-                        $ <%= product.product_price %>
+                        <%= provider.provider_tel %>
                     </td>
-                    <td class="table-admin__td">
-                        <%= product.product_stock %>
-                    </td>
-                    <td class="table-admin__td">
-                        <%= product.provider_name %>
-                    </td>
+                    <td class="table-admin__td" colspan="2"><%= provider.provider_observation %></td>
                     <td class="table-admin__td table-admin__icon" width="30">
-                        <a class="table-admin__icon--edit" href="/admin/product/edit/<%= product.product_id %>">
+                        <a class="table-admin__icon--edit" href="/admin/provider/edit/<%= provider.provider_id %>">
                             <iconify-icon icon="akar-icons:edit"></iconify-icon>
                         </a>
                     </td>

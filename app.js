@@ -11,6 +11,10 @@ app.use(express.json())
 app.use(express.static(path.resolve(__dirname,'public')))
 app.use(express.json())
 
+// Configuracion dotenv
+const dotenv = require('dotenv')
+dotenv.config()
+
 //Config. de template engine: EJS
 app.set('view engine', 'ejs')
 app.set('views', path.resolve(__dirname,'src/views'))
@@ -36,13 +40,17 @@ const shopRouter = require('./src/routers/shopRouter')
 const authRouter = require('./src/routers/authRouter')
 const adminRouter = require('./src/routers/adminRouter')
 const cartRouter = require('./src/routers/cartRouter')
+const apiRouter = require('./src/routers/apiRouter')
+const userRouter = require('./src/routers/userRouter')
 
 /* Routers */
 app.use('/', mainRouter)
-app.use('/shop', shopRouter)
 app.use('/auth', authRouter)
 app.use('/admin', adminRouter)
+app.use('/user', userRouter)
+app.use('/shop', shopRouter)
 app.use('/cart',cartRouter)
+app.use('/api', apiRouter)
 app.use('',(req,res) => {res.render('pages/main/notfound',{page:{title:'404 - Pagina no encontrada'}})})
 
 

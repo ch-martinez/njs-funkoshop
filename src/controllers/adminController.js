@@ -1,6 +1,7 @@
 const usersModels = require('../models/usersModel')
 const collectionsModels = require('../models/collectionsModel')
 const productsModels = require('../models/productsModel')
+const providersModel = require('../models/providersModel')
 
 const adminView = (req, res) => {
     console.log(req.session.user)
@@ -20,7 +21,8 @@ const productAddView = async (req, res) => {
 
 const productEditView = async (req, res) => {
     const collections = await collectionsModels.getAllCollectionsFromBD()
-    const [product] = await productsModels.getProductByIDFromBD(req.params.id)
+    console.log(req.params.id)
+    const product = await productsModels.getProductByIDFromBD(req.params.id)
     res.render('pages/admin/edit/productEditView', {product, collections, layout: 'layouts/adminLayout'})
 }
 
@@ -59,6 +61,22 @@ const usersViews = async (req, res) => {
     res.render('pages/admin/usersAdmin', {users, layout: 'layouts/adminLayout'})
 }
 
+/* Providers */
+
+const providersView = async (req, res) => {
+    const providers = await providersModel.getAllProvidersFromDB()
+    res.render('pages/admin/providersAdmin', {providers, layout: 'layouts/adminLayout'})
+}
+
+const providerAddView = async (req,res) => {
+    res.render('pages/admin/add/providerAddView', {layout: 'layouts/adminLayout'})
+}
+
+const providerEditView = async (req, res) => {
+    const [provider] = await providersModel.getProviderFromDB(req.params.id)
+    res.render('pages/admin/edit/providerEditView', {provider, layout: 'layouts/adminLayout'})
+}
+
 module.exports = {
     adminView,
     productsView,
@@ -69,5 +87,8 @@ module.exports = {
     collectionEditView,
     collectionsHomeView,
     collectionsHomeUpdate,
-    usersViews
+    usersViews,
+    providersView,
+    providerAddView,
+    providerEditView
 }

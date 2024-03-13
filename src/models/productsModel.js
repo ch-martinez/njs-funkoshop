@@ -2,7 +2,7 @@ const { pool } = require('../config/conn');
 
 const getAllProductsFromBD = async () => {
     try {
-        const [products] = await pool.query("SELECT p.*, c.collection_name, c.collection_sku FROM product p JOIN collection c ON p.collection_id = c.collection_id")
+        const [products] = await pool.query("SELECT p.*, c.collection_name, p2.provider_name  FROM product p JOIN collection c ON p.collection_id = c.collection_id JOIN providers p2 ON p.provider_id = p2.provider_id")
         return products
     } catch (error) {
         throw(error)
