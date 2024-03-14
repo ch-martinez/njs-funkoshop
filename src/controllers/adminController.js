@@ -1,10 +1,9 @@
-const usersModels = require('../models/usersModel')
-const collectionsModels = require('../models/collectionsModel')
+const authModel = require('../models/authModel')
 const productsModels = require('../models/productsModel')
 const providersModel = require('../models/providersModel')
+const collectionsModels = require('../models/collectionsModel')
 
 const adminView = (req, res) => {
-    console.log(req.session.user)
     res.render('pages/admin/admin', {layout: 'layouts/adminLayout'})
 }
 
@@ -57,7 +56,7 @@ const collectionsHomeUpdate = (req, res) => {
 
 /* Users */
 const usersViews = async (req, res) => {
-    const users = await usersModels.getAllUsersFromDB()
+    const users = await authModel.getAllUsersFromDB()
     res.render('pages/admin/usersAdmin', {users, layout: 'layouts/adminLayout'})
 }
 
