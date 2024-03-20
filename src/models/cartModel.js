@@ -104,7 +104,6 @@ const deletProductInCartDetailDB = async (cart_id, product) => {
 const updateCartDB = async (cart_id) => {
     try {
         const cartEmpty = await cartDetailEmptyInDB(cart_id)
-        console.log(cartEmpty)
         if (cartEmpty) {
             await pool.query(`UPDATE cart
             SET 
