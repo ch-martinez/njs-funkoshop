@@ -7,7 +7,10 @@ const adminView = (req, res) => {
     res.render('pages/admin/admin', {layout: 'layouts/adminLayout'})
 }
 
-/* Products */
+/* *******************************************************************
+                            Products
+******************************************************************* */
+
 const productsView = async (req, res) => {
     const products = await productsModels.getAllProductsFromBD()
     res.render('pages/admin/productsAdmin', {products ,layout: 'layouts/adminLayout'})
@@ -25,7 +28,10 @@ const productEditView = async (req, res) => {
     res.render('pages/admin/edit/productEditView', {product, collections, layout: 'layouts/adminLayout'})
 }
 
-/* Collections */
+/* *******************************************************************
+                            Collections
+******************************************************************* */
+
 const collectionsView = async (req, res) => {
     const collections = await collectionsModels.getAllCollectionsFromBD()
     res.render('pages/admin/collectionsAdmin', {collections ,layout: 'layouts/adminLayout'})
@@ -54,13 +60,18 @@ const collectionsHomeUpdate = (req, res) => {
     res.status(200)
 }
 
-/* Users */
+/* *******************************************************************
+                            Users
+******************************************************************* */
+
 const usersViews = async (req, res) => {
     const users = await authModel.getAllUsersFromDB()
     res.render('pages/admin/usersAdmin', {users, layout: 'layouts/adminLayout'})
 }
 
-/* Providers */
+/* *******************************************************************
+                            Providers
+******************************************************************* */
 
 const providersView = async (req, res) => {
     const providers = await providersModel.getAllProvidersFromDB()
@@ -72,7 +83,7 @@ const providerAddView = async (req,res) => {
 }
 
 const providerEditView = async (req, res) => {
-    const [provider] = await providersModel.getProviderFromDB(req.params.id)
+    const [provider] = await providersModel.getProviderByIdFromDB(req.params.id)
     res.render('pages/admin/edit/providerEditView', {provider, layout: 'layouts/adminLayout'})
 }
 

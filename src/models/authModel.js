@@ -1,6 +1,8 @@
 const { pool } = require('../config/conn');
 
-// OBTENCION DE DATOS
+/* *******************************************************************
+                        Obtencion de datos
+******************************************************************* */
 
 // Obtiene el email de un usuario (Se utiliza para comprobar si ya existe un email en la BD)
 const isEmailInDB = async (email) => {
@@ -31,7 +33,7 @@ const getUserNameByIdFromDB = async (user_id) => {
         console.log({message:'getUserNameFromDB ERROR', reference: error.message})
     }
 }
-// Obtiene el rol de un usuario
+// Devuelve el rol de un usuario segun el id indicado
 const getUserRoleByIdFromDB = async (user_id) => {
     try {
         const [[response]] = await pool.query('SELECT uhr.role_role_id FROM user_has_role uhr WHERE uhr.user_user_id = ?', user_id)
@@ -61,16 +63,7 @@ const getPasswordHashFromDB = async (user_id) => {
     }
 }
 
-// Obtiene el listado de usuarios
-const getUserFromDB = async (email) => {
-    try {
-        const [response] = await pool.query('SELECT u.* FROM user u WHERE u.user_email = ?', email)
-        return response
-    } catch (error) {
-        console.log({message:'getUserFromDB ERROR', reference: error.message})
-    }
-}
-
+// Devuelve el listado de todos los usuarios
 const getAllUsersFromDB = async () => {
     try {
         const [users] = await pool.query('SELECT * FROM user')
@@ -80,7 +73,9 @@ const getAllUsersFromDB = async () => {
     }
 }
 
-// ****************************************************************************************************************************
+/* *******************************************************************
+                        Registro de usuarios
+******************************************************************* */
 
 // Crea un usuario 
 const createUserInDB = async (user) => {
@@ -109,7 +104,7 @@ module.exports = {
     getUserRoleByIdFromDB,
     getAdressListByUserIdFromDB,
     getPasswordHashFromDB,
-    getUserFromDB,
+    //getUserFromDB,
     getAllUsersFromDB,
     createUserInDB,
     addUserAdressInDB

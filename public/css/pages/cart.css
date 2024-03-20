@@ -23,6 +23,20 @@
     gap: var(--spacing-68);
 }
 
+/********** CARRITO VACIO **********/
+
+.container--cart_empty{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-large);
+    font-weight: 500;
+}
+
+    .container--cart_empty iconify-icon{
+        font-size: 12rem;
+    }
+
 /********** CARRITO **********/
 .cart{
     width: 100%;
