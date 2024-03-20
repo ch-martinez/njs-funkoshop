@@ -20,4 +20,12 @@ authForm.addEventListener('submit', async (e) => {
             adress_zipCode: document.querySelector('#adress_zipCode').value
         })
     })
+    if (res.ok) {
+        const resJson = await res.json()
+        if(resJson.redirect){
+            window.location.href = resJson.redirect
+        }
+    }else{
+        return //mensajeError.classList.toggle('--hide')
+    }
 })
