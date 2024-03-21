@@ -24,16 +24,6 @@ const expressEjsLayouts = require('express-ejs-layouts')
 app.use(expressEjsLayouts)
 app.set('layout', 'layouts/mainLayout')
 
-//Configuracion de express-sesion
-const session = require('express-session')
-app.use(session({
-    secret: 'funkoshop',
-    name: "session",
-    resave: false,
-    saveUninitialized: false,
-    maxAge: 60000 * 10 // 10 minutos
-}))
-
 /* Importacion routers */
 const mainRouter = require('./src/routers/mainRouter')
 const shopRouter = require('./src/routers/shopRouter')
