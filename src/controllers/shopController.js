@@ -21,7 +21,6 @@ const shopView = async (req, res) => {
 const productView = async (req, res) => {
     const products = await getAllProductsFromBD()
     const product = await getProductByIDFromBD(req.params.id)
-    req.session.product = product
     const page = {
         title: `${product.product_name} - FS`,
         glide: true,
