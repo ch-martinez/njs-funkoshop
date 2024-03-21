@@ -1,30 +1,40 @@
+const jwt = require('jsonwebtoken')
 const authService = require('../services/authService')
+const authModel = require('../models/authModel')
+const cookieService = require('../services/cookieService')
+
+// ************************************************************************************
+
+//AUX: Devuelve la ruta a la cual se debe redireccionar segun rol del usario
+async function redirectUserRole (user_id) {
+    const role = await authModel.getUserRoleByIdFromDB(user_id)
+    if (role.role_role_id == 0) {return '/admin'}
+    if (role.role_role_id == 1) {return '/user'}
+}
 
 // Login
 const loginView = (req, res) => {
-    //Verifica si hay algun error en las credenciales de login y pasa el mensaje a la vista
-    const errors = (req.query.err != undefined) ? JSON.parse(req.query.err) : undefined
     const page = {
         title: 'Login - FS'
     }
     try {
-        res.render('pages/auth/login',{page, layout: 'layouts/authLayout', errors})
+        res.render('pages/auth/login',{page, layout: 'layouts/authLayout'})
     } catch (error) {
-        throw(error)
+        console.log({message:'loginView ERROR', reference: error.message})
     }
 }
 
 const login = async (req,res,next) => {
-    const user = await authService.validateUser(req.body)
-    if (user) {
-        const role = await authService.getUserRole(user.user_id)
-        req.session.user = user
-        req.session.user.role = role.role_role_id
-        res.redirect('/admin')
+    const loginValidate = await authService.loginValidateUser(req.body)
+    if (loginValidate.validate_ok) {
+        const redirectUrl = await redirectUserRole(loginValidate.user_id)
+        const token = jwt.sign(loginValidate, process.env.JWT_SECRET)
+        cookieService.setCookie('jwt',token,res)
+        res.send({status:'ok',message:'Login correcto',redirect: redirectUrl})
     } else {
-        console.log('Datos incorrectos')
+        console.log('Los datos ingresados son invalidos (login function)')
+        res.status(400).send({status:'Error', message:'Los datos ingresados son invalidos'})
     }
-
 }
 
 // Register
@@ -39,8 +49,15 @@ const registerView = (req, res) => {
     }
 }
 
-const register = (req, res) => {
-    return res.status(200).send('TODO OK')
+const register = async (req, res) => {
+    const existEmail = await authService.existEmailInDB(req.body.email)
+    if (existEmail.email_ok){
+        res.status(400).send({status:'Error', message:'Correo ya registrado'})
+    }else{
+        const user = await authService.generateUserFromRegister(req.body)
+        authService.registerUserInDB(user)
+        res.status(201).send({status:'ok', message:'Se registró correctamente', redirect:'/auth/login'})
+    }
 }
 
 //RecoverPass

@@ -8,7 +8,9 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
     <%}%>
+    <!-- CSS Libreria vanilla-notify -->
     <link rel="stylesheet" href="/css/imports.css">
+    <link rel="stylesheet" href="/libs/vanilla-notify/vanilla-notify.css">
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     <title><%= page.title %></title>
 </head>
@@ -16,15 +18,20 @@
     <%- include('../partials/header.ejs') %>
     <%- body %>
     <%- include('../partials/footer.ejs') %>
+    
+    <!-- libreria: vanilla-js -->
+    <script src="/libs/vanilla-notify/vanilla-notify.min.js"></script>
+    <script src="/scripts/configs/vanillaNotifyConfig.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script src="/scripts/cart.js"></script>
+    <script src="/scripts/logout.js"></script>
     <% if (page.lot) {%>
         <script src="/scripts/lot.js"></script> <!-- Configuracion de libreria Glide -->
     <%}%>
     <% if (page.glide) {%>
         <!-- Glide (Carrousel) -->
         <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script> <!-- Importacion libreria -->
-        <script src="/scripts/glideConfig.js"></script> <!-- Configuracion de libreria Glide -->
+        <script src="/scripts/configs/glideConfig.js"></script> <!-- Configuracion de libreria Glide -->
     <%}%>
 </body>
 </html>
