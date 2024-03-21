@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/imports.css">
+    <title><%= page.title %></title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="/" class="navbar-logo">
+                    <picture class="navbar-logo__picture">
+                        <img src="/img/branding/isotype.svg" alt="Funkoshop Logo">
+                    </picture>
+                    <span class="navbar-logo__name">FUNKOSHOP</span>
+                </a>
+    
+                <div>
+                    <ul class="navbar__ul">
+                        <li class="navbar__li">
+                            <a href="/" class="navbar__link">home</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <%- body %>
+</body>
+</html>
