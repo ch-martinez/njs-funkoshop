@@ -79,3 +79,52 @@
     letter-spacing: 1px;
     color: var(--color-info);
 }
+
+
+/* ***************************************************
+
+                    DASHBOARD
+
+ *************************************************** */
+.card-db{
+    width: 100%;
+    background-color: var(--bg-light-solid);
+    border-radius: var(--br-primary);
+    box-shadow: var(--shadow-primary);
+    color: var(--font-dark-800);
+    font-size: var(--font-small);
+    margin-bottom: var(--spacing-24);
+}
+
+    .card-admin--add{
+        max-width: 1200px;
+    }
+
+.card-db__header{
+    padding: var(--spacing-24);
+}
+
+.card-db__body{
+    padding: var(--spacing-24);
+    padding-top: 0;
+}
+
+.card-db__row{
+    width: 100%;
+    display: grid;
+    gap: var(--spacing-24);
+}
+.card-db__box{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+    margin-bottom: var(--spacing-16);
+}
+
+.card-db__box-img{
+    max-width: 350px;
+}
+
+.card-db__figure{
+    cursor: pointer;
+}
