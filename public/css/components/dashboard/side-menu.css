@@ -1,17 +1,24 @@
 .side-menu{
-    width: 245px;
-    height: fit-content;
-    padding: var(--spacing-28);
-    background: var(--gradient-primary);
-    border-radius: var(--br-primary);
-    box-shadow: var(--shadow-card);
+    min-width: var(--aside-width);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1800;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--primary-solid);
     color: var(--font-light-800);
 }
 
+.side-menu__header{
+    padding: var(--spacing-24);
+}
+
 .side-menu__title{
-    margin-bottom: var(--spacing-28);
-    padding-bottom: var(--spacing-12);
-    border-bottom: 1px solid var(--font-light-750);
     color: var(--font-light-solid);
     font-size: var(--font-m-medium);
     font-weight: 400;
@@ -19,11 +26,33 @@
     text-transform: uppercase;
 }
 
-.side-menu__ul{
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-28);
+.side-menu__body{
+    height: 100%;
+    padding: var(--spacing-24);
+    padding-top: 0px;
 }
+
+.side-menu__ul{
+    height: 100%;
+    position: relative;
+}
+
+.side-menu__li{
+    padding: var(--spacing-8) var(--spacing-12);
+    border-radius: var(--br-primary);
+    transition: background var(--transition-02);
+}
+
+    .side-menu__li:hover{
+        background-color: var(--font-dark-200);
+    }
+
+    .side-menu__ul-last{
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
 
 .side-menu__link{
     display: flex;
@@ -35,17 +64,4 @@
 
     .side-menu__link:hover{
         color: var(--font-light-solid);
-        font-weight: 400;
     }
-
-    .side-menu__link:hover span{
-        font-weight: 400;
-    }
-
-.side-menu__link iconify-icon{
-    font-size: var(--font-large);
-}
-
-.side-menu__link span{
-    padding-right: var(--spacing-28);
-}
