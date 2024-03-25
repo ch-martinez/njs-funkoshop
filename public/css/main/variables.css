@@ -108,4 +108,7 @@
     /* Border radius */
     --br-primary: 0.7rem;
     --br-secondary: 0.5rem;
+
+    /* Dimensions */
+    --aside-width: 26rem;
 }
