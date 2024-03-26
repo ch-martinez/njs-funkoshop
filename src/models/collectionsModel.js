@@ -13,7 +13,7 @@ const getAllCollectionsFromBD = async () => {
 // Devuelve la coleccion segun el id indicado
 const getCollectionByIDFromBD = async (collection_id) => {
     try {
-        const [collection] = await pool.query(`SELECT * FROM collection c WHERE c.collection_id = ${collection_id} `)
+        const [collection] = await pool.query(`SELECT c.*, ch.ch_active, ch.ch_order  FROM collection c JOIN collections_home ch ON ch.collection_id = c.collection_id  WHERE c.collection_id = ${collection_id}`)
         return collection
     } catch (error) {
         console.log({message:'getCollectionByIDFromBD ERROR', reference: error.message})
