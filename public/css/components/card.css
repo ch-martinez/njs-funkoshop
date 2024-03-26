@@ -104,6 +104,11 @@
     padding: var(--spacing-24);
 }
 
+.card-db__title{
+    color: var(--font-dark-700);
+    font-weight: 700;
+}
+
 .card-db__body{
     padding: var(--spacing-24);
     padding-top: 0;
@@ -121,10 +126,25 @@
     margin-bottom: var(--spacing-16);
 }
 
+    .card-db__row:last-child .card-db__box:last-child {
+        margin-bottom: 0;
+    }
+
+    .card-db__box h5{
+        color: var(--font-dark-700);
+        font-weight: 600;
+    }
+    .card-db__box p{
+        color: var(--font-dark-600);
+    }
+
 .card-db__box-img{
-    max-width: 350px;
+    width: 100%;
 }
 
 .card-db__figure{
+    max-width: 350px;
     cursor: pointer;
+    border-radius: var(--br-primary);
+    border: 1px solid var(--border-dark-200);
 }
