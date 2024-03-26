@@ -1,0 +1,68 @@
+.db-main{
+    padding-left: var(--aside-width);
+}
+
+.db-wrapper{
+    width: 1440px;
+}
+
+
+.db__header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--spacing-24) 0;
+    margin-bottom: var(--spacing-16);
+}
+
+.db__header-row{
+    display: flex;
+    justify-content: space-between;
+}
+    .db__header__text-wrapper{
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+    }
+    .db__header__title{
+        font-weight: 600;
+        font-size: var(--font-medium);
+        color: var(--font-dark-700);
+    }
+
+    .db__header__description{
+        font-size: var(--font-small);
+        color: var(--font-dark-400);
+    }
+
+    .db__header__btn{
+        width: fit-content;
+    }
+
+.db__body{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-24);
+}
+
+/* ***************************************************
+
+                    Columnas
+
+ *************************************************** */
+
+.db-col-2{
+    flex: 1 0 auto;
+    max-width: 66%;
+}
+
+.db-col-1{
+    flex: 0 1 auto;
+    max-width: 33%;
+}
+
+.card-db-col-2{
+    grid-template-columns: 1fr 1fr;
+}

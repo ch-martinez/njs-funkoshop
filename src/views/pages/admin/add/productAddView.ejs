@@ -1,99 +1,215 @@
-<h2 class="content__title">Añadir producto</h2>
-<article class="card-admin card-admin--add">
-    <form class="form-admin" action="">
-        <!-- FILA -->
-        <div class="form-admin__row">
-            <div class="form-admin__box">
-                <label for="product_name" class="label">Nombre</label>
-                <input type="text" class="input" id="product_name"
-                    name="product_name">
-            </div>
+<form action="">
+    <!-- Dashboard cabecera -->
+    <section class="db__header">
+        <section class="db__header-row">
+            <div class="db__header__text-wrapper">
+            <h2 class="db__header__title">Añadir un nuevo producto</h2>
+            <span class="db__header__description">Completa la planilla</span>
         </div>
-
-        <!-- FILA -->
-        <div class="form-admin__row form-admin__row-3">
-            <div class="form-admin__box">
-                <label for="product_description" class="label">Descripcion</label>
-                <textarea name="" id="" class="input"></textarea>
-            </div>
+        <div class="db__header__btn">
+            <a class="btn-square--db btn-square--db-discard " href="/admin/products">
+                <iconify-icon icon="tabler:circle-x" width="2.2rem" height="2.2rem"></iconify-icon>
+                Cancelar</a>
+            <button class="btn-square--db" type="submit">
+                <iconify-icon icon="tabler:circle-check" width="2.2rem" height="2.2rem"></iconify-icon>
+                Aceptar</button>
         </div>
+    </section>
+</section>
 
-        <!-- FILA -->
-        <div class="form-admin__row">
-            <div class="form-admin__box">
-                <label for="collection_name" class="label">Coleccion</label>
-                <select class="input input--select" name="collection_name"
-                    id="collection_name">
-                    <option value="null" selected>---</option>
-                    <% collections.forEach((collection)=>{%>
-                        <option value="<%= collection.collection_id %>">
-                            <%= collection.collection_name %>
-                        </option>
-                        <%}) %>
-                </select>
-            </div>
+    <!-- Dashboard cuerpo -->
+    <section class="db__body">
 
-            <div class="form-admin__box">
-                <label for="product_sku" class="label">SKU</label>
-                <input type="text" class="input" id="product_sku" name="product_sku">
-            </div>
-            <div class="form-admin__box">
-                <label for="product_stock" class="label">Stock</label>
-                <input type="number" class="input --hide-arrows"
-                    id="product_stock" name="product_stock">
-            </div>
+        <!-- Columna primaria -->
+        <section class="db-col-2">
 
-            <div class="form-admin__box">
-                <label for="product_price" class="label">Precio</label>
-                <input type="number" class="input --hide-arrows" id="product_price"
-                    name="product_price">
-            </div>
+            <!-- Informacion de general -->
+            <article class="card-db">
+                <section class="card-db__header">
+                    <h4 class="card-db__title">Informacion general</h4>
+                </section>
 
-            <div class="form-admin__box">
-                <label for="product_discount" class="label">Descuento</label>
-                <input type="number" class="input --hide-arrows"
-                    id="product_discount" name="product_discount">
-            </div>
+                <section class="card-db__body">
+                    <div class="card-db__row">
+                        <div class="card-db__box">
+                            <label for="product_name" class="label">Nombre</label>
+                            <input type="text" class="input" id="product_name" name="product_name">
+                        </div>
+                    </div>
 
-            <div class="form-admin__box">
-                <label for="product_dues" class="label">Cuotas</label>
-                <select class="input input--select" name="product_dues" id="product_dues">
-                    <option value="0" selected>0</option>
-                    <option value="3">3</option>
-                    <option value="6">6</option>
-                    <option value="12">12</option>
-                </select>
-            </div>
-        </div>
+                    <div class="card-db__row">
+                        <div class="card-db__box">
+                            <label for="product_description" class="label">Descripcion</label>
+                            <textarea name="" id="" class="input"></textarea>
+                        </div>
+                    </div>
 
-        <!-- FILA -->
-        <div class="form-admin__row">
-            <div class="form-admin__box">
-                <label for="img_front" class="label">Producto</label>
-                <div class="form-admin__box-img">
-                    <label for="img_front" class="form-admin__figure">
-                        <img src="/img/funkos/harry-potter/harry-1.webp" alt="" srcset="">
-                    </label>
-                    <input type="file" name="img_front" id="img_front">
-                </div>
-            </div>
-            
-            <div class="form-admin__box">
-                <label for="img_back" class="label">Paquete</label>
-                <div class="form-admin__box-img">
-                    <label for="img_back" class="form-admin__figure">
-                        <img  src="/img/funkos/harry-potter/harry-box.webp" alt="" srcset="">
-                    </label>
-                    <input type="file" name="img_back" id="img_back">
-                </div>
-            </div>
-        </div>
+                    <div class="card-db__row card-db-col-2">
+                        <div class="card-db__box">
+                            <label for="collection_name" class="label">
+                                <span>Coleccion</span>
+                                <a class="label__link" href="/admin/collection/add">Nueva coleccion</a>
+                            </label>
+                            <select class="input input--select" name="collection_name" id="collection_name">
+                                <option value="null" selected>---</option>
+                                <% collections.forEach((collection)=>{%>
+                                    <option value="<%= collection.collection_id %>">
+                                        <%= collection.collection_name %>
+                                    </option>
+                                    <%}) %>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+            </article>
 
-        <!-- FILA -->
-        <div class="form-admin__row">
-            <!-- BOTONES -->
-            <button class="btn-square" type="submit">Aceptar</button>
-            <a class="btn-square btn--gray" href="/admin/products">Cancelar</a>
-        </div>
-    </form>
-</article>
+            <!-- Imagenes -->
+            <article class="card-db ">
+                <section class="card-db__header">
+                    <h4 class="card-db__title">Imagenes</h4>
+                </section>
+
+                <section class="card-db__body">
+                    <div class="card-db__row card-db-col-2">
+                        <div class="card-db__box card-db__box-img">
+                            <label for="img_front" class="label">Producto</label>
+                            <div class="">
+                                <label for="img_front" class="card-db_figure">
+                                    <img src="/img/funkos/harry-potter/harry-1.webp" alt="" srcset="">
+                                </label>
+                                <input type="file" name="img_front" id="img_front">
+                            </div>
+                        </div>
+
+                        <div class="card-db__box card-db__box-img">
+                            <label for="img_back" class="label">Paquete</label>
+                            <div class="">
+                                <label for="img_back" class="card-db_figure">
+                                    <img src="/img/funkos/harry-potter/harry-box.webp" alt="" srcset="">
+                                </label>
+                                <input type="file" name="img_back" id="img_back">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </section>
+
+        <!-- Columna secundaria -->
+        <section class="db-col-1">
+
+            <!-- Precio -->
+            <article class="card-db">
+                <section class="card-db__header">
+                    <h4 class="card-db__title">Precio</h4>
+                </section>
+                <section class="card-db__body">
+                    <div class="card-db__row card-db-col-2">
+
+                        <div class="card-db__box">
+                            <label for="product_price" class="label">Precio</label>
+                            <input type="number" class="input --hide-arrows" id="product_price" name="product_price">
+                        </div>
+
+                        <div class="card-db__box">
+                            <label for="product_discount" class="label">Descuento</label>
+                            <input type="number" class="input --hide-arrows" id="product_discount"
+                                name="product_discount">
+                        </div>
+                    </div>
+                    <div class="card-db__row card-db-col-2">
+                        <div class="card-db__box">
+                            <label for="product_dues" class="label">Cuotas</label>
+                            <select class="input input--select" name="product_dues" id="product_dues">
+                                <option value="0" selected>0</option>
+                                <option value="3">3</option>
+                                <option value="6">6</option>
+                                <option value="12">12</option>
+                            </select>
+                        </div>
+                        <div class="card-db__box">
+                            <label for="product_dues" class="label">¿Interés?</label>
+                            <select class="input input--select" name="product_dues" id="product_dues">
+                                <option value="0" selected>Sin interés</option>
+                                <option value="0">Con interés</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <!-- Inventario -->
+            <article class="card-db">
+                <section class="card-db__header">
+                    <h4 class="card-db__title">Inventario</h4>
+                </section>
+                <section class="card-db__body">
+                    <div class="card-db__row">
+                        <div class="card-db__box">
+                            <label for="collection_name" class="label">
+                                <span>Provedor</span>
+                                <a class="label__link" href="/admin/provider/add">Nuevo provedor</a>
+                            </label>
+                            <select class="input input--select" name="collection_name" id="collection_name">
+                                <option value="null" selected>---</option>
+                                <% collections.forEach((collection)=>{%>
+                                    <option value="<%= collection.collection_id %>">
+                                        <%= collection.collection_name %>
+                                    </option>
+                                    <%}) %>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-db__row">
+
+                        <div class="card-db__box">
+                            <label for="product_sku" class="label">SKU</label>
+                            <input type="text" class="input" id="product_sku" name="product_sku">
+                        </div>
+                    </div>
+                    <div class="card-db__row card-db-col-2">
+                        <div class="card-db__box">
+                            <label for="product_stock" class="label">Stock</label>
+                            <input type="number" class="input --hide-arrows" id="product_stock" name="product_stock">
+                        </div>
+                        <div class="card-db__box">
+                            <span class="label">Estado</span>
+                            <div class="checkbox-container">
+                                <input type="checkbox" name="product_state" id="product_state" class="input--checkbox"
+                                    checked>
+                                <label for="product_state" class="">Disponible</label>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </article>
+
+            <!-- Varios -->
+            <article class="card-db">
+                <section class="card-db__header">
+                    <h4 class="card-db__title">Varios</h4>
+                </section>
+                <section class="card-db__body">
+                    <div class="card-db__row">
+
+                        <div class="card-db__box">
+
+                        </div>
+
+                        <div class="card-db__box">
+
+                        </div>
+
+                        <div class="card-db__box">
+
+                            </select>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+        </section>
+
+    </section>
+</form>

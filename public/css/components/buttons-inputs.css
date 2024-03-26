@@ -69,11 +69,53 @@
         transform: translateY(-3px);
     }
 
+/* ***************************************************
+
+                    Dashboard
+
+ *************************************************** */
+ .btn-square--db{
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-8);
+    padding: var(--spacing-8) var(--spacing-20);
+    background: var(--primary-800);
+    color: var(--font-light-solid);
+    font-family: var(--font-primary);
+    font-size: var(--font-small);
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    border-radius: var(--br-primary);
+    transition: box-shadow var(--transition-02), transform var(--transition-02);
+}
+
+    .btn-square--db:hover{
+        background: var(--primary-solid);
+    }
+
+.btn-square--db-discard{
+    background: var(--color-discard);
+}
+
+    .btn-square--db-discard:hover{
+        background: var(--color-discard-solid);
+    }
+
 /****************************** LABELS ******************************/
 .label{
+    display: flex;
+    justify-content: space-between;
     color: var(--font-dark-900);
     font-size: var(--font-small);
     font-weight: 400;
+}
+
+.label__link{
+    color: var(--primary-solid);
 }
 
 .label--admin{
@@ -164,4 +206,13 @@
     -ms-transition: height 0.5s ease-in;
     -o-transition: height 0.5s ease-in;
     transition: height 0.5s ease-in;
+}
+
+.checkbox-container{
+    height: 100%;
+    display: flex;
+    gap: var(--spacing-4);
+    align-items: center;
+    justify-content: left;
+    font-weight: 300;
 }
