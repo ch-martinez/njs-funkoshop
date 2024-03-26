@@ -1,36 +1,61 @@
-<h2 class="content__title">Proveedor EDITAR</h2>
-<article class="card-admin card-admin--add">
-    <form class="form-admin" action="">
-        <!-- FILA -->
-        <div class="form-admin__row">
-            <div class="form-admin__box">
-                <label for="provider_name" class="label">Nombre</label>
-                <input type="text" class="input" id="provider_name" name="provider_name" value="<%= provider.provider_name %>">
+<form action="">
+    <!-- Dashboard cabecera -->
+    <section class="db__header">
+        <section class="db__header-row">
+            <div class="db__header__text-wrapper">
+                <h2 class="db__header__title">Editar provedor</h2>
+                <span class="db__header__description">Completa la planilla</span>
             </div>
-        </div>
-
-        <!-- FILA -->
-        <div class="form-admin__row form-admin__row-3">
-            <div class="form-admin__box">
-                <label for="provider_observation" class="label">Observacion</label>
-                <textarea name="provider_observation" id="provider_observation" class="input"><%= provider.provider_observation %></textarea>
+            <div class="db__header__btn">
+                <a class="btn-square--db btn-square--db-discard " href="/admin/providers">
+                    <iconify-icon icon="tabler:circle-x" width="2.2rem" height="2.2rem"></iconify-icon>
+                    Cancelar</a>
+                <button class="btn-square--db" type="submit">
+                    <iconify-icon icon="tabler:circle-check" width="2.2rem" height="2.2rem"></iconify-icon>
+                    Aceptar</button>
             </div>
-        </div>
+        </section>
+    </section>
 
-        <!-- FILA -->
-        <div class="form-admin__row">
 
-            <div class="form-admin__box">
-                <label for="provider_tel" class="label">TEL</label>
-                <input type="text" class="input" id="provider_tel" name="provider_tel" value="<%= provider.provider_tel %>">
-            </div>
-        </div>
+    <!-- Dashboard cuerpo -->
+    <section class="db__body">
 
-        <!-- FILA -->
-        <div class="form-admin__row">
-            <!-- BOTONES -->
-            <button class="btn-square" type="submit">Aceptar</button>
-            <a class="btn-square btn--gray" href="/admin/providers">Cancelar</a>
-        </div>
-    </form>
-</article>
+        <!-- Columna primaria -->
+        <section class="db-col-2">
+
+            <!-- Informacion de general -->
+            <article class="card-db">
+                <section class="card-db__header">
+                    <h4 class="card-db__title">Informacion general</h4>
+                </section>
+
+                <section class="card-db__body">
+                    <div class="card-db__row">
+                        <div class="card-db__box">
+                            <label for="provider_name" class="label">Nombre</label>
+                            <input type="text" class="input" id="provider_name" name="provider_name" value="<%= provider.provider_name %>">
+                        </div>
+                    </div>
+
+                    <div class="card-db__row">
+                        <div class="card-db__box">
+                            <label for="provider_observation" class="label">Observacion</label>
+                            <textarea name="provider_observation" id="provider_observation" class="input"><%= provider.provider_observation %></textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="card-db__row">
+                        <div class="card-db__box">
+                            <label for="provider_tel" class="label">Telefono contacto</label>
+                            <input type="text" class="input" id="provider_tel" name="provider_tel" value="<%= provider.provider_tel %>">
+                        </div>
+                    </div>
+
+                </section>
+            </article>
+        </section>
+
+    </section>
+</form>
