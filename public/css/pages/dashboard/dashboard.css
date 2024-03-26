@@ -1,15 +1,27 @@
-.db{
-
+.db-main{
+    padding-left: var(--aside-width);
 }
+
+.db-wrapper{
+    width: 1440px;
+}
+
 
 .db__header{
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    padding: var(--spacing-16) 0;
+    padding: var(--spacing-24) 0;
     margin-bottom: var(--spacing-16);
 }
-    .db__header__text{
+
+.db__header-row{
+    display: flex;
+    justify-content: space-between;
+}
+    .db__header__text-wrapper{
+        width: fit-content;
         display: flex;
         flex-direction: column;
     }
@@ -22,6 +34,10 @@
     .db__header__description{
         font-size: var(--font-small);
         color: var(--font-dark-400);
+    }
+
+    .db__header__btn{
+        width: fit-content;
     }
 
 .db__body{
