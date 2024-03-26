@@ -1,0 +1,146 @@
+<!-- Dashboard cabecera -->
+<section class="db__header">
+    <section class="db__header-row">
+        <div class="db__header__text-wrapper">
+            <h2 class="db__header__title">Detalle</h2>
+            <span class="db__header__description">Información completa de la coleccion</span>
+        </div>
+        <div class="db__header__btn">
+            <a class="btn-square--db btn-square--db-discard" href="/admin/collections">
+                <iconify-icon icon="tabler:circle-arrow-left" width="2.2rem" height="2.2rem"></iconify-icon>
+                Regresar</a>
+            <a class="btn-square--db" href="/admin/collection/edit/<%= collection.collection_id %>">
+                <iconify-icon icon="tabler:edit" width="2.2rem" height="2.2rem"></iconify-icon>
+                Editar</a>
+        </div>
+    </section>
+</section>
+
+
+<section class="db__body">
+
+    <section class="db-col-2">
+
+        <article class="card-db">
+            <section class="card-db__header">
+                <h4 class="card-db__title">Informacion general</h4>
+            </section>
+            <section class="card-db__body">
+                <div class="card-db__row">
+                    <div class="card-db__box">
+                        <h4 >Nombre</h4>
+                        <p><%= collection.collection_name %></p>
+                    </div>
+                </div>
+                
+                <div class="card-db__row">
+                    <div class="card-db__box">
+                        <h4>Descripción</h4>
+                        <p><%= collection.collection_description %></p>
+                    </div>
+                </div>
+
+                <div class="card-db__row">
+                    <div class="card-db__box">
+                        <h4>SKU</h4>
+                        <p><%= collection.collection_sku %></p>
+                    </div>
+                </div>
+                
+            </section>
+        </article>
+        <article class="card-db">
+            <section class="card-db__header">
+                <h4 class="card-db__title">Productos de esta coleccion</h4>
+            </section>
+            <section class="card-db__body">
+                <table id="adminTable" class="table-admin">
+                    <thead class="table-admin__head">
+
+                        <tr class="table-admin__tr">
+                            <th class="table-admin__td">ID</th>
+                            <th class="table-admin__td">Colección</th>
+                            <th class="table-admin__td" colspan="2">Nombre</th>
+                            <th class="table-admin__td">Precio</th>
+                            <th class="table-admin__td">Stock</th>
+                            <th class="table-admin__td">Proveedor</th>
+                            <th class="table-admin__td" data-sortable="false"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-admin__body">
+                        <% products.forEach((product)=> { %>
+                            <tr class="table-admin__tr">
+                                <td class="table-admin__td">
+                                    <%= product.product_id %>
+                                </td>
+                                <td class="table-admin__td">
+                                    <%= product.collection_name %>
+                                </td>
+                                <td class="table-admin__td" colspan="2">
+                                    <%= product.product_name %>
+                                </td>
+                                <td class="table-admin__td">
+                                    $ <%= product.product_price %>
+                                </td>
+                                <td class="table-admin__td">
+                                    <%= product.product_stock %>
+                                </td>
+                                <td class="table-admin__td">
+                                    <%= product.provider_name %>
+                                </td>
+                                <td class="table-admin__td table-admin__icon" width="30">
+                                    <a class="table-admin__icon--edit" href="/admin/product/edit/<%= product.product_id %>">
+                                        <iconify-icon icon="tabler:edit"></iconify-icon>
+                                    </a>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+                
+            </section>
+        </article>
+    </section>
+    <!-- Columna secundaria -->
+    <section class="db-col-1">
+        <!-- Imagenes -->
+        <article class="card-db ">
+            <section class="card-db__header">
+                <h4 class="card-db__title">Portada</h4>
+            </section>
+
+            <section class="card-db__body">
+                <div class="card-db__row">
+                    <div class="card-db__box card-db__box-img">
+                        <pictureclass="card-db_figure">
+                            <img src="<%= collection.collection_img %>" alt="" srcset="">
+                        </pictur>
+                    </div>
+                </div>
+            </section>
+        </article>
+        <article class="card-db">
+            <section class="card-db__header">
+                <h4 class="card-db__title">Colecciones en home</h4>
+            </section>
+            <section class="card-db__body">
+                <div class="card-db__row">
+                    <div class="card-db__box">
+                        <h4>Se muestra en la pagina home: </h4>
+                        <% if (collection.ch_active == 1) {%>
+                            <p>SI</p>
+                        <% }else{ %>
+                            <p>NO</p>
+                        <%}%>
+                    </div>
+                    <div class="card-db__row">
+                        <div class="card-db__box">
+                            <h4>N° de orden: </h4>
+                            <p><%= collection.ch_order %></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </section>
+</section>

@@ -20,6 +20,16 @@ const getProductByIDFromBD = async (product_id) => {
     }
 }
 
+// Devuelve el detalle producto segun el id indicado
+const getProductDetailByIDFromBD = async (product_id) => {
+    try {
+        const [[product]] = await pool.query(`SELECT p.*, c.collection_id,  c.collection_sku, c.collection_name, pv.provider_id , pv.provider_name  FROM product p JOIN collection c ON p.collection_id = c.collection_id JOIN providers pv ON p.provider_id = pv.provider_id  WHERE p.product_id = ${product_id}`)
+        return product
+    } catch (error) {
+        console.log({message:'getProductByIDFromBD ERROR', reference: error.message})
+    }
+}
+
 // Devuelve listado de todos los productos pertenecientes a la coleccion indicada
 const getProductsByCollectionFromBD = async (collection_id) => {
     try {
@@ -30,8 +40,20 @@ const getProductsByCollectionFromBD = async (collection_id) => {
     }
 }
 
+// Devuelve listado de todos los productos pertenecientes al provedor indicado
+const getProductsByProviderFromBD = async (provider_id) => {
+    try {
+        const [products] = await pool.query(`SELECT p.*, c.collection_name, c.collection_sku FROM product p JOIN collection c ON p.collection_id = c.collection_id WHERE p.provider_id = ${provider_id}`)
+        return products
+    } catch (error) {
+        console.log({message:'getProductsByCollectionFromBD ERROR', reference: error.message})
+    }
+}
+
 module.exports = {
     getAllProductsFromBD,
     getProductByIDFromBD,
-    getProductsByCollectionFromBD
+    getProductDetailByIDFromBD,
+    getProductsByCollectionFromBD,
+    getProductsByProviderFromBD
 }

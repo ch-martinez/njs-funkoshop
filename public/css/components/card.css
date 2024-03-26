@@ -79,3 +79,72 @@
     letter-spacing: 1px;
     color: var(--color-info);
 }
+
+
+/* ***************************************************
+
+                    DASHBOARD
+
+ *************************************************** */
+.card-db{
+    width: 100%;
+    background-color: var(--bg-light-solid);
+    border-radius: var(--br-primary);
+    box-shadow: var(--shadow-primary);
+    color: var(--font-dark-800);
+    font-size: var(--font-small);
+    margin-bottom: var(--spacing-24);
+}
+
+    .card-admin--add{
+        max-width: 1200px;
+    }
+
+.card-db__header{
+    padding: var(--spacing-24);
+}
+
+.card-db__title{
+    color: var(--font-dark-700);
+    font-weight: 700;
+}
+
+.card-db__body{
+    padding: var(--spacing-24);
+    padding-top: 0;
+}
+
+.card-db__row{
+    width: 100%;
+    display: grid;
+    gap: var(--spacing-24);
+}
+.card-db__box{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+    margin-bottom: var(--spacing-16);
+}
+
+    .card-db__row:last-child .card-db__box:last-child {
+        margin-bottom: 0;
+    }
+
+    .card-db__box h5{
+        color: var(--font-dark-700);
+        font-weight: 600;
+    }
+    .card-db__box p{
+        color: var(--font-dark-600);
+    }
+
+.card-db__box-img{
+    width: 100%;
+}
+
+.card-db__figure{
+    max-width: 350px;
+    cursor: pointer;
+    border-radius: var(--br-primary);
+    border: 1px solid var(--border-dark-200);
+}

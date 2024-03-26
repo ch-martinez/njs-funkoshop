@@ -23,9 +23,13 @@ const productAddView = async (req, res) => {
 
 const productEditView = async (req, res) => {
     const collections = await collectionsModels.getAllCollectionsFromBD()
-    console.log(req.params.id)
     const product = await productsModels.getProductByIDFromBD(req.params.id)
     res.render('pages/admin/edit/productEditView', {product, collections, layout: 'layouts/adminLayout'})
+}
+
+const productDetailView = async (req, res) => {
+    const product = await productsModels.getProductDetailByIDFromBD(req.params.id)
+    res.render('pages/admin/detail/productDetailView', {product, layout: 'layouts/adminLayout'})
 }
 
 /* *******************************************************************
@@ -44,6 +48,12 @@ const collectionAddView = async (req,res) => {
 const collectionEditView = async (req, res) => {
     const [collection] = await collectionsModels.getCollectionByIDFromBD(req.params.id)
     res.render('pages/admin/edit/collectionEditView', {collection, layout: 'layouts/adminLayout'})
+}
+
+const collectionDetailView = async (req, res) => {
+    const [collection] = await collectionsModels.getCollectionByIDFromBD(req.params.id)
+    const products = await productsModels.getProductsByCollectionFromBD(req.params.id)
+    res.render('pages/admin/detail/collectionDetailView', {collection, products, layout: 'layouts/adminLayout'})
 }
 
 const collectionsHomeView = async (req, res) => {
@@ -87,18 +97,27 @@ const providerEditView = async (req, res) => {
     res.render('pages/admin/edit/providerEditView', {provider, layout: 'layouts/adminLayout'})
 }
 
+const providerDetailView = async (req, res) => {
+    const [provider] = await providersModel.getProviderByIdFromDB(req.params.id)
+    const products = await productsModels.getProductsByProviderFromBD(req.params.id)
+    res.render('pages/admin/detail/providerDetailView', {provider, products, layout: 'layouts/adminLayout'})
+}
+
 module.exports = {
     adminView,
     productsView,
     productAddView,
     productEditView,
+    productDetailView,
     collectionsView,
     collectionAddView,
     collectionEditView,
+    collectionDetailView,
     collectionsHomeView,
     collectionsHomeUpdate,
     usersViews,
     providersView,
     providerAddView,
-    providerEditView
+    providerEditView,
+    providerDetailView
 }

@@ -1,50 +1,68 @@
-<article class="card-admin card-admin--head">
-    <h2 class="content__title">Colecciónes</h2>
-    <div class="card-admin__btn-container">
+<!-- Dashboard cabecera -->
+<section class="db__header">
+    <section class="db__header-row">
+        <div class="db__header__text-wrapper">
+            <h2 class="db__header__title">Colecciónes</h2>
+            <span class="db__header__description">Listado de coleciones</span>
+        </div>
+        <div class="db__header__btn">
+            <a class="btn-square--db" href="/admin/collections/home">
+                <iconify-icon icon="tabler:home-heart" width="2.2rem" height="2.2rem"></iconify-icon>
+                Colecciónes en home</a>
+            <a class="btn-square--db" href="/admin/collection/add">
+                <iconify-icon icon="tabler:circle-plus" width="2.2rem" height="2.2rem"></iconify-icon>
+                Nueva colección</a>
+        </div>
+    </section>
+</section>
 
-        <a class="btn-square" href="/admin/collections/home">Listado home</a>
-        <a class="btn-square" href="/admin/collection/add">Nueva colección</a>
-    </div>
-</article>
-<article class="card-admin">
-    <table id="adminTable" class="table-admin">
-        <thead class="table-admin__head">
-            <tr class="table-admin__tr">
-                <th class="table-admin__td">ID</th>
-                <th class="table-admin__td">Nombre</th>
-                <th class="table-admin__td">SKU</th>
-                <th class="table-admin__td" colspan="3">Descripción</th>
-                <th class="table-admin__td" data-sortable="false"></th>
-                <th class="table-admin__td" data-sortable="false"></th>
-            </tr>
-        </thead>
-        <tbody class="table-admin__body">
-            <% collections.forEach((collection)=> { %>
-                <tr class="table-admin__tr">
-                    <td class="table-admin__td">
-                        <%= collection.collection_id %>
-                    </td>
-                    <td class="table-admin__td">
-                        <%= collection.collection_name %>
-                    </td>
-                    <td class="table-admin__td">
-                        <%= collection.collection_sku %>
-                    </td>
-                    <td class="table-admin__td" colspan="3">
-                        <%= collection.collection_description %>
-                    </td>
-                    <td class="table-admin__td table-admin__icon">
-                        <a class="table-admin__icon--edit" href="/admin/collection/edit/<%= collection.collection_id %>">
-                            <iconify-icon icon="akar-icons:edit"></iconify-icon>
-                        </a>
-                    </td>
-                    <td class="table-admin__td table-admin__icon">
-                        <a class="table-admin__icon--delet" href="">
-                            <iconify-icon icon="akar-icons:circle-x"></iconify-icon>
-                        </a>
-                    </td>
-                </tr>
-            <% }) %>
-        </tbody>
-    </table>
-</article>
+
+<section class="db__body">
+
+    <article class="card-db">
+        <section class="card-db__header">
+            <table id="adminTable" class="table-admin">
+                <thead class="table-admin__head">
+                    <tr class="table-admin__tr">
+                        <th class="table-admin__td">ID</th>
+                        <th class="table-admin__td">Nombre</th>
+                        <th class="table-admin__td">SKU</th>
+                        <th class="table-admin__td" colspan="3">Descripción</th>
+                        <th class="table-admin__td" data-sortable="false"></th>
+                        <th class="table-admin__td" data-sortable="false"></th>
+                    </tr>
+                </thead>
+                <tbody class="table-admin__body">
+                    <% collections.forEach((collection)=> { %>
+                        <tr class="table-admin__tr">
+                            <td class="table-admin__td">
+                                <%= collection.collection_id %>
+                            </td>
+                            <td class="table-admin__td">
+                                <%= collection.collection_name %>
+                            </td>
+                            <td class="table-admin__td">
+                                <%= collection.collection_sku %>
+                            </td>
+                            <td class="table-admin__td" colspan="3">
+                                <%= collection.collection_description %>
+                            </td>
+                            <td class="table-admin__td table-admin__icon">
+                                <a class="table-admin__icon--edit"
+                                    href="/admin/collection/detail/<%= collection.collection_id %>">
+                                    <iconify-icon icon="tabler:list"></iconify-icon>
+                                </a>
+                            </td>
+                            <td class="table-admin__td table-admin__icon">
+                                <a class="table-admin__icon--edit"
+                                    href="/admin/collection/edit/<%= collection.collection_id %>">
+                                    <iconify-icon icon="tabler:edit"></iconify-icon>
+                                </a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </section>
+    </article>
+</section>
