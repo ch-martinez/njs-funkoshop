@@ -9,15 +9,12 @@
     <title>Administracion - FS</title>
 </head>
 <body>
-    <%- include('../partials/headerAdmin.ejs') %>
-    <main>
-        <div class=" container-admin">
-            <%- include('../components/admin/sidebar.ejs')%>
-    
-            <section class="content">
-                <%- body %>
-            </section>
-        </div>
+    <%#- include('../partials/headerAdmin.ejs') %>
+    <%- include('../components/admin/sidebar.ejs')%>
+    <main class="db-main">
+        <section class="db-wrapper">
+            <%- body %>
+        </section>
     </main>
     <%# include('../partials/footerAdmin.ejs') %>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
