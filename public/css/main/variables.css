@@ -48,6 +48,8 @@
     --border-dark-200: rgba(29,37,59,.2);
     --border-dark-100: rgba(29,37,59,.1);
 
+    --border-input: #c9c8ce;
+
     /* Font */
     --font-light-solid: #FFF;
     --font-light-800: rgba(255,255,255,.8);
@@ -61,6 +63,9 @@
     --font-dark-600: rgba(34,42,66,.6);
     --font-dark-400: rgba(34,42,66,.4);
     --font-dark-200: rgba(34,42,66,.2);
+
+    --font-color-dark: rgb(93, 89, 108);
+    --font-color-dark: rgb(93, 89, 108);
 
     /* Typography */
     --font-base: 'Poppins', sans-serif;
