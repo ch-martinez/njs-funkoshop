@@ -1,4 +1,6 @@
 const authForm = document.querySelector('.auth-form')
+const inputs = document.querySelectorAll('.input')
+let notify__box_status = false
 
 authForm.addEventListener('submit', async (e) => {
     e.preventDefault()
@@ -16,6 +18,15 @@ authForm.addEventListener('submit', async (e) => {
             window.location.href = resJson.redirect
         }
     }else{
-        return //mensajeError.classList.toggle('--hide')
+        const resJson = await res.json()
+        notify__box_status = notify__box(res.status, resJson.message)
     }
 })
+
+inputs.forEach(input => {
+    input.addEventListener("input", () =>{
+        if (notify__box_status) {
+            notify__box_status = notify__box_clear()
+        }
+    })
+});
