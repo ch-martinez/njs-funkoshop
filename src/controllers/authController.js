@@ -33,7 +33,7 @@ const login = async (req,res,next) => {
         res.send({status:'ok',message:'Login correcto',redirect: redirectUrl})
     } else {
         console.log('Los datos ingresados son invalidos (login function)')
-        res.status(400).send({status:'Error', message:'Los datos ingresados son invalidos'})
+        res.status(401).send({message:'Los datos ingresados son invalidos'})
     }
 }
 
