@@ -38,3 +38,32 @@ function notify (type,msg) {
             break;
     }
 }
+
+/* Crea una alerta box */
+function notify__box (type, msg){
+    const notify__box = document.querySelector('#notify__box')
+    let nClass = 'notify__box '
+    switch (type) {
+        case 200:
+            nClass += 'notify__box--sucess'
+            break;
+        case 401:
+            nClass += 'notify__box--danger'
+            break;
+        case 500:
+            nClass += 'notify__box--danger'
+            break;
+        case 501:
+            nClass += 'notify__box--info'
+            break;
+    }
+    notify__box.innerHTML = `<div class="${nClass}">${msg}</div>`
+    return true
+}
+
+/* Limpia una alerta box */
+function notify__box_clear (){
+    const notify__box = document.querySelector('#notify__box')
+    notify__box.innerHTML = ""
+    return false
+}
