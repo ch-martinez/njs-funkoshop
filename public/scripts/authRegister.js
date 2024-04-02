@@ -1,9 +1,11 @@
 const authForm = document.querySelector('.auth-form')
+const inputs = document.querySelectorAll('.input')
+let notify__box_status = false
 
 authForm.addEventListener('submit', async (e) => {
     e.preventDefault()
     document.querySelector('#name').value
-    const res = await fetch('/auth/register',{
+    const fetchRes = await fetch('/auth/register',{
         method:'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -20,12 +22,24 @@ authForm.addEventListener('submit', async (e) => {
             adress_zipCode: document.querySelector('#adress_zipCode').value
         })
     })
-    if (res.ok) {
+
+    if (fetchRes.ok) {
         const resJson = await res.json()
         if(resJson.redirect){
-            window.location.href = resJson.redirect
+            notify('success', {text: resJson.message})
+            setTimeout(() => {
+                window.location.href = resJson.redirect // Redirije al login si el registro es ok
+            }, 1500);
         }
     }else{
-        return //mensajeError.classList.toggle('--hide')
+        notify__box_status = notify__box(res.status, resJson.message)
     }
 })
+
+inputs.forEach(input => {
+    input.addEventListener("input", () =>{
+        if (notify__box_status) {
+            notify__box_status = notify__box_clear()
+        }
+    })
+});
