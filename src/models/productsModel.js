@@ -50,10 +50,35 @@ const getProductsByProviderFromBD = async (provider_id) => {
     }
 }
 
+const updateProductByID = async (product) => {
+    try {
+        await pool.query(`
+        UPDATE product
+        SET
+            product_name = "${product.product_name}",
+            product_description = "${product.product_description}",
+            product_price = ${product.product_price},
+            product_discount = ${product.product_discount},
+            product_dues = ${product.product_dues},
+            product_interes = ${product.product_interes},
+            product_sku = "${product.product_sku}",
+            product_stock = ${product.product_stock},
+            product_state = ${product.product_state},
+            collection_id = ${product.collection_id},
+            provider_id = ${product.provider_id}
+        WHERE
+            product_id = ${product.product_id}
+        `)
+    } catch (error) {
+        console.log({message:'updateProductByID ERROR', reference: error.message})
+    }
+}
+
 module.exports = {
     getAllProductsFromBD,
     getProductByIDFromBD,
     getProductDetailByIDFromBD,
     getProductsByCollectionFromBD,
-    getProductsByProviderFromBD
+    getProductsByProviderFromBD,
+    updateProductByID
 }

@@ -4,6 +4,7 @@
 
 .db-wrapper{
     width: 1440px;
+    margin: 0 var(--spacing-24);
 }
 
 
@@ -54,13 +55,12 @@
  *************************************************** */
 
 .db-col-2{
-    flex: 1 0 auto;
-    max-width: 66%;
+    flex: 4 0 auto;
 }
 
 .db-col-1{
-    flex: 0 1 auto;
-    max-width: 33%;
+    flex: 1 40 auto;
+    /* max-width: 33%; */
 }
 
 .card-db-col-2{

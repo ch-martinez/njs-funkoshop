@@ -1,4 +1,5 @@
 <!-- Dashboard cabecera -->
+<form class="form-admin" action="" method="POST">
 <section class="db__header">
     <section class="db__header-row">
         <div class="db__header__text-wrapper">
@@ -9,9 +10,9 @@
             <a class="btn-square--db btn-square--db-discard" href="/admin/collections">
                 <iconify-icon icon="tabler:circle-x" width="2.2rem" height="2.2rem"></iconify-icon>
                 Cancelar</a>
-            <a class="btn-square--db" href="/admin/collection/add">
+            <button class="btn-square--db" type="submit">
                 <iconify-icon icon="tabler:circle-check" width="2.2rem" height="2.2rem"></iconify-icon>
-                Guardar</a>
+                Guardar</button>
         </div>
     </section>
 </section>
@@ -20,7 +21,6 @@
 
     <article class="card-db">
         <section class="card-db__header">
-            <form class="form-admin" action="">
                 <table class="table-admin">
                     <thead class="table-admin__head">
                         <tr class="table-admin__tr">
@@ -51,7 +51,7 @@
                                         </picture>
                                     </td>
                                     <td id="ch_active" class="table-admin__td table-admin__icon table-admin__td--center">
-                                        <input class="input--checkbox" type="checkbox" name="" id=""  <% if(collection.ch_active == 1) {%> checked <% } %> >
+                                        <input class="input--checkbox" type="checkbox" name="ch_active" id=""  <% if(collection.ch_active == 1) {%> checked <% } %> >
                                     </td>
                                     <td class="table-admin__td table-admin__icon">
                                         <a class="table-admin__icon--edit" href="/admin/collection/edit/<%= collection.collection_id %>">
@@ -68,3 +68,4 @@
         </section>
     </article>
 </section>
+</form>

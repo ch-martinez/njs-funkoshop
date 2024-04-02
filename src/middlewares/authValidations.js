@@ -30,12 +30,12 @@ const loginValidateFields = [
         .not()
         .isEmpty()
             .withMessage('Ingrese una contraseña')
-        .isStrongPassword({ minLength: 6, minLowercase: 1, minUppercase: 1, minSymbols: 0 })
+        .isStrongPassword({ minLength: 6, minLowercase: 0, minUppercase: 0, minSymbols: 0 })
             .withMessage('La contraseña no cumple los requisitos minimos'),
     (req, res, next) => {
         const result = validationResult(req)
         if (!result.isEmpty()) {
-            res.status(400).send({status:"Error",message: parseErrors(result)})
+            res.status(400).send({status:"Error",message: result.errors[0].msg})
             //res.redirect('/auth/login?err=' + parseErrors(result))
         } else {
             next()

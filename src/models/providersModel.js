@@ -20,7 +20,24 @@ const getProviderByIdFromDB = async (provider_id) => {
     }
 }
 
+const updateProviderByID = async (provider) => {
+    try {
+        await pool.query(`
+        UPDATE providers
+        SET
+            provider_name = "${provider.provider_name}",
+            provider_tel = "${provider.provider_tel}",
+            provider_observation = "${provider.provider_observation}"
+        WHERE
+            provider_id = ${provider.provider_id}
+        `)
+    } catch (error) {
+        console.log({message:'updateProviderByID ERROR', reference: error.message})
+    }
+}
+
 module.exports = {
     getAllProvidersFromDB,
-    getProviderByIdFromDB
+    getProviderByIdFromDB,
+    updateProviderByID
 }

@@ -13,12 +13,13 @@
     --secondary-200: rgba(186, 84, 245, 0.2);
 
     /* Palette - Misc */
-    --delet-solid: rgb(255, 53, 53);
+    /* --delet-solid: rgb(255, 53, 53); */
 
     --color-info: #1d8cf8!important;
     --color-success: #00f2c3!important;
     --color-waring: #ff8d72!important;
-    --color-danger: #fd5d93!important;
+    --color-danger: rgb(234, 84, 85)!important;
+    --color-danger-bg: rgb(251, 221, 221);
     --color-discard-solid: #c9c9c9!important;
     --color-discard: #d4d4d4!important;
 

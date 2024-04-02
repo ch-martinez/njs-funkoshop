@@ -70,6 +70,11 @@
     gap: var(--spacing-24);
 }
 
+.auth-form__row--notify{
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
 .auth-form__row:last-child{
     display: flex;
     flex-direction: column;

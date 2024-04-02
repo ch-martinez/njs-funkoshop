@@ -22,9 +22,31 @@ const productAddView = async (req, res) => {
 }
 
 const productEditView = async (req, res) => {
-    const collections = await collectionsModels.getAllCollectionsFromBD()
     const product = await productsModels.getProductByIDFromBD(req.params.id)
-    res.render('pages/admin/edit/productEditView', {product, collections, layout: 'layouts/adminLayout'})
+    const collections = await collectionsModels.getAllCollectionsFromBD()
+    const providers = await providersModel.getAllProvidersFromDB()
+    res.render('pages/admin/edit/productEditView', {product, collections, providers, layout: 'layouts/adminLayout'})
+}
+
+const productEdit = async (req, res) => {
+    const product = {
+        product_id: req.params.id,
+        product_name: req.body.product_name,
+        product_description: req.body.product_description,
+        product_price: Number(req.body.product_price),
+        product_discount: Number(req.body.product_discount),
+        product_dues: Number(req.body.product_dues),
+        product_interes: Number(req.body.product_interes),
+        product_sku: req.body.product_sku,
+        product_stock: Number(req.body.product_stock),
+        product_state: req.body.product_state == 'on' ? 1 : 0,
+        collection_id: Number(req.body.collection_id),
+        provider_id: Number(req.body.provider_id),
+        img_front: req.body.img_front,
+        img_back: req.body.img_back,
+    }
+    await productsModels.updateProductByID(product)
+    res.redirect('/admin/products')
 }
 
 const productDetailView = async (req, res) => {
@@ -50,6 +72,18 @@ const collectionEditView = async (req, res) => {
     res.render('pages/admin/edit/collectionEditView', {collection, layout: 'layouts/adminLayout'})
 }
 
+const collectionEdit = async (req, res) => {
+    const collection = {
+        collection_id: Number(req.params.id),
+        collection_name: req.body.collection_name,
+        collection_description: req.body.collection_description,
+        collection_sku: req.body.collection_sku,
+        ch_active: req.body.ch_active == 'on' ? 1 : 0
+    }
+    await collectionsModels.updateCollectionByID(collection)
+    res.redirect('/admin/collections')
+}
+
 const collectionDetailView = async (req, res) => {
     const [collection] = await collectionsModels.getCollectionByIDFromBD(req.params.id)
     const products = await productsModels.getProductsByCollectionFromBD(req.params.id)
@@ -64,10 +98,12 @@ const collectionsHomeView = async (req, res) => {
 
 // Actualiza el listado de coleciones mostrados en home
 const collectionsHomeUpdate = (req, res) => {
-    req.body.forEach(collection => {
+    console.log(req.body)
+    /* req.body.forEach(collection => {
+        console.log(collection)
         collectionsModels.updateCollectionHome(collection)
     })
-    res.status(200)
+     */res.status(200)
 }
 
 /* *******************************************************************
@@ -97,6 +133,17 @@ const providerEditView = async (req, res) => {
     res.render('pages/admin/edit/providerEditView', {provider, layout: 'layouts/adminLayout'})
 }
 
+const providerEdit = async (req, res) => {
+    const provider = {
+        provider_id: Number(req.params.id),
+        provider_name: req.body.provider_name,
+        provider_tel: req.body.provider_tel,
+        provider_observation: req.body.provider_observation
+    }
+    await providersModel.updateProviderByID(provider)
+    res.redirect('/admin/providers')
+}
+
 const providerDetailView = async (req, res) => {
     const [provider] = await providersModel.getProviderByIdFromDB(req.params.id)
     const products = await productsModels.getProductsByProviderFromBD(req.params.id)
@@ -108,10 +155,12 @@ module.exports = {
     productsView,
     productAddView,
     productEditView,
+    productEdit,
     productDetailView,
     collectionsView,
     collectionAddView,
     collectionEditView,
+    collectionEdit,
     collectionDetailView,
     collectionsHomeView,
     collectionsHomeUpdate,
@@ -119,5 +168,6 @@ module.exports = {
     providersView,
     providerAddView,
     providerEditView,
+    providerEdit,
     providerDetailView
 }
