@@ -117,3 +117,31 @@
 }
 
 /*# sourceMappingURL=vanilla-notify.css.map */
+
+/* Custom */
+.notify__box{
+    max-width: 317px;
+    padding: var(--spacing-16) var(--spacing-24);
+    border-radius:var(--br-secondary);
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-align: center;
+    text-wrap: wrap;
+}
+
+.notify__box--sucess{
+    background-color: var(--color-sucess-bg);
+    color: var(--color-sucess);
+}
+.notify__box--warning{
+    background-color: var(--color-warning-bg);
+    color: var(--color-warning);
+}
+.notify__box--danger{
+    background-color: var(--color-danger-bg);
+    color: var(--color-danger);
+}
+.notify__box--info{
+    background-color: var(--color-info-bg);
+    color: var(--color-info);
+}
