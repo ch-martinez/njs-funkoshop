@@ -4,7 +4,7 @@ let notify__box_status = false
 
 authForm.addEventListener('submit', async (e) => {
     e.preventDefault()
-    const res = await fetch('/auth/login',{
+    const fetchRes = await fetch('/auth/login',{
         method:'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -12,16 +12,17 @@ authForm.addEventListener('submit', async (e) => {
             password: document.querySelector('#password').value
         })
     })
-    if (res.ok) {
-        const resJson = await res.json()
+    const resJson = await fetchRes.json()
+    if (fetchRes.ok) {
         if(resJson.redirect){
             window.location.href = resJson.redirect
         }
     }else{
-        const resJson = await res.json()
-        notify__box_status = notify__box(res.status, resJson.message)
+        notify__box_status = notify__box(fetchRes.status, resJson.message)
     }
 })
+
+
 
 inputs.forEach(input => {
     input.addEventListener("input", () =>{
