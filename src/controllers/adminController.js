@@ -98,12 +98,17 @@ const collectionsHomeView = async (req, res) => {
 
 // Actualiza el listado de coleciones mostrados en home
 const collectionsHomeUpdate = (req, res) => {
-    console.log(req.body)
-    /* req.body.forEach(collection => {
-        console.log(collection)
-        collectionsModels.updateCollectionHome(collection)
-    })
-     */res.status(200)
+    try {
+        req.body.forEach(collection => {
+            const res = collectionsModels.updateCollectionHome(collection)
+            if (res.status == 500) {
+                throw new Error(res)
+            }
+        })
+        res.status(200).send({message:'Se actualizo la colecction'})
+    } catch (error) {
+        return res.status(500).send({message: 'Se produjo un error al actualizar las colecciones en home', reference: error.message})
+    }
 }
 
 /* *******************************************************************
