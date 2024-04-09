@@ -40,12 +40,23 @@ const getCollectionsHomeActiveFromDB = async () => {
     }
 }
 
+// Actualiza una coleccion segun el id indicado
+const updateCollectionByID = async (collection) => {
+    try {
+        await pool.query(`UPDATE collection SET collection_name = "${collection.collection_name}", collection_description = "${collection.collection_description}", collection_sku = "${collection.collection_sku}" WHERE collection_id = ${collection.collection_id};`)
+        await pool.query(`UPDATE collections_home SET ch_active = ${collection.ch_active} WHERE collection_id = ${collection.collection_id};`)
+    } catch (error) {
+        console.log({message:'updateCollectionByID ERROR', reference: error.message})
+    }
+}
+
 // Actualiza el listado de colecciones que se muestran en el home
 const updateCollectionHome = async (collection) => {
     try {
         await pool.query(`UPDATE collections_home ch SET ch_order = ${collection.ch_order},ch_active = ${collection.ch_active} WHERE collection_id = ${collection.collection_id};`)
     } catch (error) {
         console.log({message:'updateCollectionHome ERROR', reference: error.message})
+        return {status:500, message:'Error al actualizar colecciones en home'}
     }
 }
 
@@ -54,5 +65,6 @@ module.exports = {
     getCollectionByIDFromBD,
     getAllCollectionsHomeFromDB,
     getCollectionsHomeActiveFromDB,
+    updateCollectionByID,
     updateCollectionHome
 }

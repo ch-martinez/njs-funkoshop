@@ -1,4 +1,4 @@
-<form action="">
+<form action="" method="POST">
     <!-- Dashboard cabecera -->
     <section class="db__header">
         <section class="db__header-row">
@@ -7,9 +7,9 @@
             <span class="db__header__description">Completa la planilla</span>
         </div>
         <div class="db__header__btn">
-            <a class="btn-square--db btn-square--db-discard" href="/admin/products">
+            <button id="back_btn" class="btn-square--db btn-square--db-discard" type="reset">
                 <iconify-icon icon="tabler:circle-x" width="2.2rem" height="2.2rem"></iconify-icon>
-                Cancelar</a>
+                Cancelar</button>
             <button class="btn-square--db" type="submit">
                 <iconify-icon icon="tabler:circle-check" width="2.2rem" height="2.2rem"></iconify-icon>
                 Aceptar</button>
@@ -40,7 +40,7 @@
                     <div class="card-db__row">
                         <div class="card-db__box">
                             <label for="product_description" class="label">Descripcion</label>
-                            <textarea name="" id="" class="input"><%= product.product_description %></textarea>
+                            <textarea name="product_description" id="product_description" class="input"><%= product.product_description %></textarea>
                         </div>
                     </div>
 
@@ -50,8 +50,8 @@
                                 <span>Coleccion</span>
                                 <a class="label__link" href="/admin/collection/add">Nueva coleccion</a>
                             </label>
-                            <select class="input input--select" name="collection_name" id="collection_name">
-                                <option value="null" selected>---</option>
+                            <select class="input input--select" name="collection_id" id="collection_id">
+                                <option value="null">---</option>
                                 <% collections.forEach((collection)=>{%>
                                     <option value="<%= collection.collection_id %>" <% if (product.collection_id == collection.collection_id) { %> selected <% } %> >
                                         <%= collection.collection_name %>
@@ -127,10 +127,10 @@
                             </select>
                         </div>
                         <div class="card-db__box">
-                            <label for="product_dues" class="label">¿Interés?</label>
-                            <select class="input input--select" name="product_dues" id="product_dues">
-                                <option value="0" selected>Sin interés</option>
-                                <option value="0">Con interés</option>
+                            <label for="product_interes" class="label">¿Interés?</label>
+                            <select class="input input--select" name="product_interes" id="product_interes">
+                                <option value="0" <% if (product.product_interes == 0) { %> selected <% } %> >Sin interés</option>
+                                <option value="1" <% if (product.product_interes == 1) { %> selected <% } %> >Con interés</option>
                             </select>
                         </div>
                     </div>
@@ -145,15 +145,15 @@
                 <section class="card-db__body">
                     <div class="card-db__row">
                         <div class="card-db__box">
-                            <label for="collection_name" class="label">
+                            <label for="provider_id" class="label">
                                 <span>Provedor</span>
                                 <a class="label__link" href="/admin/provider/add">Nuevo provedor</a>
                             </label>
-                            <select class="input input--select" name="collection_name" id="collection_name">
-                                <option value="null" selected>---</option>
-                                <% collections.forEach((collection)=>{%>
-                                    <option value="<%= collection.collection_id %>">
-                                        <%= collection.collection_name %>
+                            <select class="input input--select" name="provider_id" id="provider_id">
+                                <option value="null">---</option>
+                                <% providers.forEach((provider)=>{%>
+                                    <option value="<%= provider.provider_id %>"<% if (product.provider_id == provider.provider_id) { %> selected <% } %> >
+                                        <%= provider.provider_name %>
                                     </option>
                                     <%}) %>
                             </select>
@@ -175,7 +175,7 @@
                             <span class="label">Estado</span>
                             <div class="checkbox-container">
                                 <input type="checkbox" name="product_state" id="product_state" class="input--checkbox"
-                                    checked>
+                                    <% if (product.product_state == 1) {%>checked<% } %> >
                                 <label for="product_state" class="">Disponible</label>
                             </div>
                         </div>

@@ -32,8 +32,7 @@ const login = async (req,res,next) => {
         cookieService.setCookie('jwt',token,res)
         res.send({status:'ok',message:'Login correcto',redirect: redirectUrl})
     } else {
-        console.log('Los datos ingresados son invalidos (login function)')
-        res.status(400).send({status:'Error', message:'Los datos ingresados son invalidos'})
+        res.status(401).send({message:'Los datos ingresados son invalidos'})
     }
 }
 
@@ -52,11 +51,11 @@ const registerView = (req, res) => {
 const register = async (req, res) => {
     const existEmail = await authService.existEmailInDB(req.body.email)
     if (existEmail.email_ok){
-        res.status(400).send({status:'Error', message:'Correo ya registrado'})
+        res.status(400).send({input:'email', message:'Correo ya registrado'})
     }else{
         const user = await authService.generateUserFromRegister(req.body)
         authService.registerUserInDB(user)
-        res.status(201).send({status:'ok', message:'Se registró correctamente', redirect:'/auth/login'})
+        res.status(201).send({input:'none', message:'Se registró correctamente', redirect:'/auth/login'})
     }
 }
 

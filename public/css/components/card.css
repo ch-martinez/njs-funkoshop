@@ -140,6 +140,7 @@
 
 .card-db__box-img{
     width: 100%;
+    align-items: center;
 }
 
 .card-db__figure{

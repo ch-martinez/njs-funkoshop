@@ -6,9 +6,9 @@
             <span class="db__header__description">Información completa de la coleccion</span>
         </div>
         <div class="db__header__btn">
-            <a class="btn-square--db btn-square--db-discard" href="/admin/collections">
+            <button id="back_btn" class="btn-square--db btn-square--db-discard" type="reset">
                 <iconify-icon icon="tabler:circle-arrow-left" width="2.2rem" height="2.2rem"></iconify-icon>
-                Regresar</a>
+                Regresar</button>
             <a class="btn-square--db" href="/admin/collection/edit/<%= collection.collection_id %>">
                 <iconify-icon icon="tabler:edit" width="2.2rem" height="2.2rem"></iconify-icon>
                 Editar</a>
@@ -124,9 +124,9 @@
             <section class="card-db__body">
                 <div class="card-db__row">
                     <div class="card-db__box card-db__box-img">
-                        <pictureclass="card-db_figure">
+                        <picture class="card-db__figure">
                             <img src="<%= collection.collection_img %>" alt="" srcset="">
-                        </pictur>
+                        </picture>
                     </div>
                 </div>
             </section>

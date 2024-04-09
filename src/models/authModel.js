@@ -7,7 +7,7 @@ const { pool } = require('../config/conn');
 // Obtiene el email de un usuario (Se utiliza para comprobar si ya existe un email en la BD)
 const isEmailInDB = async (email) => {
     try {
-        const [response] = await pool.query(`SELECT COUNT(*) AS user_email  FROM user WHERE user_email = '${email}'`)
+        const [[response]] = await pool.query(`SELECT COUNT(*) AS user_email  FROM user WHERE user_email = '${email}'`)
         return (response.user_email == 0) ? false : true
     } catch (error) {
         console.log({message:'isEmailInDB ERROR', reference: error.message})

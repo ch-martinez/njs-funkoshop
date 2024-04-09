@@ -77,3 +77,38 @@
     background-color: var(--primary-600) !important;
     color: var(--font-dark-600) !important;
 }
+
+.ch__ul{
+
+}
+
+.ch__li{
+    display: grid;
+    grid-template-columns: 1fr 1fr 4fr 2fr;
+    gap: var(--spacing-16);
+}
+
+.ch__box{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.ch__box:last-child{
+    gap: var(--spacing-20);
+    justify-content: end;
+    margin-right: var(--spacing-20);
+}
+
+.ch__box--name{
+
+}
+
+.ch__box--active{
+    gap: var(--spacing-8);
+}
+
+.ch__box--icon{
+    font-size: var(--font-large);
+    
+}

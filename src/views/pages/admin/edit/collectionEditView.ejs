@@ -1,4 +1,4 @@
-<form action="">
+<form action="" method="POST">
     <!-- Dashboard cabecera -->
     <section class="db__header">
         <section class="db__header-row">
@@ -7,9 +7,9 @@
             <span class="db__header__description">Completa la planilla</span>
         </div>
         <div class="db__header__btn">
-            <a class="btn-square--db btn-square--db-discard " href="/admin/collections">
+            <button id="back_btn" class="btn-square--db btn-square--db-discard" type="reset">
                 <iconify-icon icon="tabler:circle-x" width="2.2rem" height="2.2rem"></iconify-icon>
-                Cancelar</a>
+                Cancelar</button>
             <button class="btn-square--db" type="submit">
                 <iconify-icon icon="tabler:circle-check" width="2.2rem" height="2.2rem"></iconify-icon>
                 Aceptar</button>
@@ -49,15 +49,23 @@
                             <label for="collection_sku" class="label">SKU</label>
                             <input type="text" class="input" id="collection_sku" name="collection_sku" value="<%= collection.collection_sku %>">
                         </div>
-                        <div class="card-db__box">
-                            <span class="label">Mostrar en home</span>
-                            <div class="checkbox-container">
-                                <input type="checkbox" name="product_state" id="product_state" class="input--checkbox" checked>
-                                <label for="product_state" class="">Disponible</label>
+                    </div>
+                    <div class="card-db__row card-db-col-2">
+                        <div class="card-db__row card-db-col-2">
+                            <div class="card-db__box">
+                                <span class="label">Mostrar en home</span>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" name="ch_active" id="ch_active" class="input--checkbox" <% if (collection.ch_active == 1) {%>checked<% } %> >
+                                    <label for="ch_active" class="">Mostrar</label>
+                                </div>
+                                <div class="checkbox-container">
+                                    <span>Orden: </span>
+                                    <span for="ch_active" name="ch_order" class=""><%= collection.ch_order %></span>
+
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </section>
             </article>
         </section>
