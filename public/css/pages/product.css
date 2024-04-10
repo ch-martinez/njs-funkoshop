@@ -1,20 +1,16 @@
-.main--product{
-    display: flex;
-    justify-content: center;
-}
-
-.product__container{
+/* .product__container{
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
+} */
 
 .product{
+    width: 100%;
     height: fit-content;
     display: flex;
-    width: 90%;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
 
 .product__figure{
@@ -22,8 +18,8 @@
 
 }
 .product__img-front{
-    
 }
+
 .product__img-back{
     display: none;
 }

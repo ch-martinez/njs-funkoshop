@@ -1,15 +1,18 @@
-.collections{}
+.collections{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-20);
+}
 
 .collection{
     width: 100%;
-    margin: var(--spacing-20) 0;
     display: flex;
     justify-content: space-between;
 }
 
-.collection:nth-child(even){
-    flex-direction: row-reverse;
-}
+    .collection:nth-child(even){
+        flex-direction: row-reverse;
+    }
 
 .collection__content{
     max-width: 600px;

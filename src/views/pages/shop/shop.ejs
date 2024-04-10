@@ -1,5 +1,6 @@
-<main class="main--shop">
+<main class="main">
     <section class="container">
+        <!-- Search/Filters Bar -->
         <section class="search-order-container">
             <div class="search-bar">
                 <iconify-icon class="search-bar__icon" icon="akar-icons:search"></iconify-icon>
@@ -15,16 +16,20 @@
                 </select>
             </div>
         </section>
-        <section class="products--container">
+
+        <!-- Products section -->
+        <section class="products">
             <section class="products__list">
                 <ul class="products__ul">
                     <% products.forEach((item) => {%>
-                        <%- include('../../components/card.ejs', {item: item}) %>
+                        <%- include('../../components/card-product.ejs', {item: item}) %>
                     <%}) %>
                 </ul>
             </section>
+
+            <!-- Paginator -->
             <section class="paginator">
-                
+
             </section>
         </section>
     </section>

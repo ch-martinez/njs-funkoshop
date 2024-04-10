@@ -15,10 +15,11 @@
 @import url('/css/components/buttons-inputs.css');
 @import url('/css/components/collections.css');
 @import url('/css/components/lot.css');
+@import url('/css/components/hero.css');
 @import url('/css/components/card.css');
+@import url('/css/components/card-product.css');
 
 /* Pages */
-@import url('/css/pages/home.css');
 @import url('/css/pages/shop.css');
 @import url('/css/pages/product.css');
 @import url('/css/pages/cart.css');

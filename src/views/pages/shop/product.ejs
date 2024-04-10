@@ -1,5 +1,6 @@
-<main class="main--product">
-    <section class="product__container container">
+<main class="main">
+    <section class="container">
+        <!-- Product Detail -->
         <article class="product" id="<%= product.product_id %>">
             <figure class="product__figure">
                 <img class="product__img-front" src="<%= product.img_front %>" alt="<%= product.product_description %>">
@@ -23,6 +24,8 @@
                 </form>
             </section>
         </article>
+
+        <!-- Carrousel -->
         <%- include('../../components/glide.ejs', {title: 'Productos relacionados', products})%>
     </section>
 </main>

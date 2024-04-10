@@ -8,13 +8,13 @@ const cartView = async (req, res) => {
         isEmpty: await cartModel.cartDetailEmptyInDB(cart_id),
     }
     if (page.isEmpty) {
-        res.render('pages/shop/cart', {page})
+        res.render('pages/shop/cart/cart', {page})
     }else{
         const cart = {
             resume: await cartModel.getCartFromDB(cart_id),
             list: await cartModel.getCartListFromDB(cart_id)
         }
-        res.render('pages/shop/cart', {page, cart})
+        res.render('pages/shop/cart/cart', {page, cart})
     }
 }
 
@@ -23,7 +23,16 @@ const cartViewPost = async (req, res) => {
     console.log(req.body)
 }
 
+const checkoutView = async (req, res) => {
+
+    const page = {
+        title: 'Carrito de compras - FS',
+    }
+    res.render('pages/shop/cart/checkout', {page})
+}
+
 module.exports = {
     cartView,
-    cartViewPost
+    cartViewPost,
+    checkoutView
 }

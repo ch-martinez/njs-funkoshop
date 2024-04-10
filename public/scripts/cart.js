@@ -1,6 +1,7 @@
-const form = document.querySelector('#product')
+const form = document.querySelector('#product') || undefined
 const cartItems = document.querySelector('.navbar__cart-items')
 const btnDelet = document.querySelectorAll('.cart-item__delet')
+const btnShop = document.querySelector('#btnShop')
 const lotInputs = document.querySelectorAll('.lot__inputs')
 
 /* Funciones auxiliares */
@@ -65,12 +66,23 @@ const setProductsTotalQuantity = async () => {
     }
 }
 
+/* const purchase = async () => {
+    const fetchRes = await fetch('/purchaswe')
+    if (fetchRes.ok) {
+        window.location.href = ('/purchase')
+    } else {
+        const resJson = await fetchRes.json()
+        notify(fetchRes.status, {text: resJson.message})
+    }
+} */
+
 /* Eventos */
 
 // Muestra la cantidad de productos en carrito, en la barra de navegacion
 window.onload = () => {
     setProductsTotalQuantity()
 }
+// Escucha cuando se realiza la compra
 
 lotInputs.forEach( input => {
     input.addEventListener('click', (e) => {
@@ -95,11 +107,14 @@ btnDelet.forEach(btn => {
 });
 
 // Escucha cuando se agrega un elemto
-form.addEventListener('submit', (e) => {
+if (form != null) {form.addEventListener('submit', (e) => {
     e.preventDefault()
     let id = Number(e.target.dataset.id)
     let quantity = Number(e.target[1].value)
     addItemToCart(id, quantity)
     setProductsTotalQuantity()
-})
+})}
 
+btnShop.addEventListener('click', (e) => {
+    console.log('COMPRAR!');
+})

@@ -74,7 +74,9 @@
                     Dashboard
 
  *************************************************** */
- .btn-square--db{
+.btn-square--db{
+    width: fit-content;
+    height: fit-content;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
