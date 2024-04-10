@@ -1,0 +1,81 @@
+<main class="db-main">
+    <section class="db-wrapper">
+       
+        
+        <form action="" method="POST">
+            <!-- Dashboard cabecera -->
+            <section class="db__header">
+                <section class="db__header-row">
+                    <div class="db__header__text-wrapper">
+                        <h2 class="db__header__title">Editar colección</h2>
+                        <span class="db__header__description">Completa la planilla</span>
+                    </div>
+                    <div class="db__header__btn">
+                        <button id="back_btn" class="btn-square--db btn-square--db-discard" type="reset">
+                            <iconify-icon icon="tabler:circle-x" width="2.2rem" height="2.2rem"></iconify-icon>
+                            Cancelar</button>
+                            <button class="btn-square--db" type="submit">
+                                <iconify-icon icon="tabler:circle-check" width="2.2rem" height="2.2rem"></iconify-icon>
+                                Aceptar</button>
+                            </div>
+                        </section>
+                    </section>
+                    
+                    <!-- Dashboard cuerpo -->
+                    <section class="db__body">
+                        
+                        <!-- Columna primaria -->
+                        <section class="db-col-2">
+                            
+                            <!-- Informacion de general -->
+                            <article class="card-db">
+                                <section class="card-db__header">
+                                    <h4 class="card-db__title">Informacion de envio</h4>
+                                </section>
+                                
+                                <section class="card-db__body">
+                                    <div class="auth-form__row auth-form__row--adress">
+                                        <div class="auth-form__box">
+                                            <label for="adress" class="label">Calle</label>
+                                            <input class="input" type="text" name="adress_street" id="adress_street" required>
+                                        </div>
+                                        <div class="auth-form__box">
+                                            <label for="tel" class="label">Altura</label>
+                                            <input class="input --hide-arrows" type="number" name="adress_nro" id="adress_nro" required>
+                                        </div>
+                                        <div class="auth-form__box">
+                                            <label for="adress" class="label">Datos adicionales</label>
+                                            <input class="input" type="text" name="adress_detail" id="adress_detail" required>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="auth-form__row auth-form__row--adress-location">
+                                        <div class="auth-form__box">
+                                            <label for="adress" class="label">Ciudad</label>
+                                            <input class="input" type="text" name="adress_city" id="adress_city" required>
+                                        </div>
+                                        <div class="auth-form__box">
+                                            <label for="adress" class="label">Provincia</label>
+                                            <input class="input" type="text" name="adress_state" id="adress_state" required>
+                                        </div>
+                                        <div class="auth-form__box">
+                                            <label for="tel" class="label">Codigo postal</label>
+                                            <input class="input --hide-arrows" type="number" name="adress_zipCode" id="adress_zipCode" required>
+                                        </div>
+                                    </div>
+                                    <div class="card-db__row">
+                                        <div class="card-db__box">
+                                            <label for="collection_name" class="label">Nombre</label>
+                                            <input type="text" class="input" id="collection_name" name="collection_name">
+                                        </div>
+                                    </div>
+                                    
+                                </section>
+                            </article>
+                        </section>
+                        
+       
+    </section>
+</form>
+</section>
+</main>

@@ -1,0 +1,102 @@
+<% if (page.isEmpty) {%>
+
+    <main class="main--home">
+        <section class="container">
+            <section class="container container--cart_empty">
+                <iconify-icon icon="mdi:cart-off"></iconify-icon>
+                <h1>  ¡Carrito vacio!</h1>
+            </section>
+        </section>
+    </main>
+
+<%}else{ %>
+
+    <main class="main--container">
+        <section class="container container--cart">
+            <section class="cart">
+                <h1 class="cart__title">Carrito de compras</h1>
+                <ul class="cart__ul">
+                    <li class="cart__li">
+                        <div class="cart-item__box cart-item__box--head">
+                            Producto
+                        </div>
+                        <div class="cart-item__box cart-item__box--head">
+                            Cantidad
+                        </div>
+                        <div class="cart-item__box cart-item__box--head">
+                            Precio
+                        </div>
+                    </li>
+                    <% cart.list.forEach((product)=> {%>
+                        <li class="cart__li">
+
+                            <div class="cart-item__box">
+                                <a href="/shop/item/<%= product.product_id %>">
+                                    <div class="cart-item__product">
+                                        <figure class="cart-item__figure">
+                                            <img src="<%= product.img_front %>" alt="">
+                                        </figure>
+                                        <div class="cart-item__product__content">
+                                            <span class="cart-item__collection">
+                                                <%= product.collection_name %>
+                                            </span>
+                                            <span class="cart-item__name">
+                                                <%= product.product_name %>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="cart-item__box">
+                                <div class="lot__inputs lot__inputs--cart" data-id="<%= product.product_id %>">
+                                    <button class="lot__btn lot__btn--substract" type="button">-</button>
+                                    <input class="lot__input --hide-arrows" type="number"
+                                        value="<%=product.product_quantity%>" min="1"
+                                        max="<%= product.product_stock %>">
+                                    <button class="lot__btn lot__btn--add" type="button">+</button>
+                                </div>
+                            </div>
+
+                            <div class="cart-item__box">
+                                $ <%= product.product_price %>
+                            </div>
+
+                            <div class="cart-item__box">
+                                <button class="cart-item__delet" data-id="<%= product.product_id %>">
+                                    <iconify-icon icon="akar-icons:circle-x"></iconify-icon>
+                                </button>
+                            </div>
+                        </li>
+                    <%})%>
+                </ul>
+
+            </section>
+
+            <aside class="resume">
+                <h2 class="resume__title">RESUMEN COMPRA</h2>
+                <div id="resumeSubtotal" class="resume__content">
+                    <span class="resume__key">Subtotal</span>
+                    <span class="resume__value">$ <%= cart.resume.cart_subtotal %></span>
+                </div>
+                <div class="resume__content">
+                    <span class="resume__key">Envio</span>
+                    <span class="resume__value">$ <%= cart.resume.cart_ship %></span>
+                </div>
+                <div class="resume__content">
+                    <span class="resume__key">Cupon descuento</span>
+                    <span class="resume__value">
+                        <%= cart.resume.cart_coupon %>
+                    </span>
+                </div>
+                <div id="resumeTotal" class="resume__content">
+                    <span class="resume__key">TOTAL</span>
+                    <span class="resume__value">$ <%= cart.resume.cart_total %></span>
+                </div>
+                <!-- <button id="btnShop" class="btn-square btn--secondary btn--cart" type="button">Realizar compra</button> -->
+                <a id="btnShop" class="btn-square btn--secondary btn--cart" href="/cart/checkout">Realizar compra</a>
+            </aside>
+        </section>
+    </main>
+
+<%}%>

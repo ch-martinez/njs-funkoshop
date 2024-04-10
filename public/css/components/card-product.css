@@ -1,0 +1,81 @@
+.card-product{
+    max-width: 300px;
+    height: 100%;
+    padding: var(--spacing-20);
+    background-color: var(--bg-light-solid);
+    border-radius: var(--br-primary);
+    color: var(--font-dark-900);
+    transition: var(--transition-bs-t);
+    flex-grow: 1;
+}
+
+.card-product:hover{
+    box-shadow: var(--shadow-primary);
+}
+
+.card-product__link{
+    display: inline-block;
+}
+
+.card-product__figure{
+}
+
+.card-product__img-front{
+
+}
+
+.card-product__img-back{
+    display: none;
+}
+
+    .card-product__figure:hover .card-product__img-front{
+        display: none;
+    }
+
+    .card-product__figure:hover .card-product__img-back{
+        display: initial;
+    }
+
+.card-product__content{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr 1fr;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--spacing-4);
+}
+
+.card-product__collection{
+    color: var(--font-dark-600);
+    font-size: var(--font-medium);
+    font-weight: 400;
+}
+
+.card-product__name{
+    color: var(--font-dark-900);
+    font-size: var(--font-large);
+    font-weight: 500;
+    line-height: 3rem;
+    text-wrap: wrap;
+}
+
+.card-product__price-box{
+    font-size: var(--font-m-medium);
+    font-weight: 300;
+}
+
+.card-product__discount{
+    font-size: var(--font-m-medium);
+}
+
+.card-product__price{
+    font-size: var(--font-m-medium);
+}
+
+.card-product__dues{
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--color-info);
+}

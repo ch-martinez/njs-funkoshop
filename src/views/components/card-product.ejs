@@ -1,0 +1,17 @@
+<article class="card-product">
+    <a class="card-product__link" href="/shop/item/<%=item.product_id%>">
+        <figure class="card-product__figure">
+            <img class="card-product__img-front" src="<%=item.img_front%>" alt="<%=item.collection_description%>">
+            <img class="card-product__img-back" src="<%=item.img_back%>" alt="<%=item.collection_description%>">
+        </figure>
+        <section class="card-product__content">
+            <h3 class="card-product__collection"><%=item.collection_name%></h3>
+            <span class="card-product__name"><%=item.product_name%></span>
+            <div class="card-product__price-box">
+                <span class="card-product__discount">$ <%=item.product_discount%></span>
+                <span class="card-product__price">$ <%=item.product_price%></span>
+            </div>
+            <span class="card-product__dues"><%=item.product_dues%> cuotas sin interés</span>
+        </section>
+    </a>
+</article>
