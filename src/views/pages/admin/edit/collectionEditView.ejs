@@ -25,43 +25,45 @@
 
             <!-- Informacion de general -->
             <article class="card">
-                <section class="card-header">
+                <section class="card__header">
                     <h3 class="card__title">Informacion general</h3>
                 </section>
 
-                <section class="card-body">
-                    <div class="card-db__row">
-                        <div class="card-db__box">
+                <section class="card__body">
+                    <div class="card__row card__row-2">
+                        <div class="card__inputs-group">
                             <label for="collection_name" class="label">Nombre</label>
                             <input type="text" class="input" id="collection_name" name="collection_name" value="<%= collection.collection_name %>">
                         </div>
                     </div>
 
-                    <div class="card-db__row">
-                        <div class="card-db__box">
+                    <div class="card__row">
+                        <div class="card__inputs-group">
                             <label for="collection_description" class="label">Descripcion</label>
                             <textarea name="collection_description" id="collection_description" class="input"><%= collection.collection_description %></textarea>
                         </div>
                     </div>
 
-                    <div class="card-db__row card-db-col-2">
-                        <div class="card-db__box">
+                    <div class="card__row">
+                        <div class="card__inputs-group">
                             <label for="collection_sku" class="label">SKU</label>
                             <input type="text" class="input" id="collection_sku" name="collection_sku" value="<%= collection.collection_sku %>">
                         </div>
                     </div>
-                    <div class="card-db__row card-db-col-2">
-                        <div class="card-db__row card-db-col-2">
-                            <div class="card-db__box">
-                                <span class="label">Mostrar en home</span>
+
+                    <div class="card__row card__row-2">
+                        <div class="card__row card__row-2">
+                            <div class="card__inputs-group">
                                 <div class="checkbox-container">
+                                    <span class="label">Mostrar en home</span>
                                     <input type="checkbox" name="ch_active" id="ch_active" class="input--checkbox" <% if (collection.ch_active == 1) {%>checked<% } %> >
                                     <label for="ch_active" class="">Mostrar</label>
                                 </div>
+                            </div>
+                            <div class="card__inputs-group">
                                 <div class="checkbox-container">
                                     <span>Orden: </span>
                                     <span for="ch_active" name="ch_order" class=""><%= collection.ch_order %></span>
-
                                 </div>
                             </div>
                         </div>
@@ -73,20 +75,20 @@
         <!-- Columna secundaria -->
         <section class="db-col-1">
             <!-- Imagenes -->
-            <article class="card-db ">
-                <section class="card-db__header">
-                    <h4 class="card-db__title">Portada</h4>
+            <article class="card">
+                <section class="card__header">
+                    <h4 class="card__title">Portada</h4>
                 </section>
 
-                <section class="card-db__body">
-                    <div class="card-db__row card-db-col-2">
-                        <div class="card-db__box card-db__box-img">
-                            <div class="">
-                                <label for="img_front" class="card-db_figure">
+                <section class="card__body">
+                    <div class="card__row">
+                        <div class="card__inputs-group">
+                            <div class="card__figure">
+                                <label for="img_front" class="">
                                     <img src="<%= collection.collection_img %>" alt="" srcset="">
                                 </label>
-                                <input type="file" name="img_front" id="img_front">
                             </div>
+                            <input type="file" name="img_front" id="img_front">
                         </div>
                     </div>
                 </section>

@@ -24,28 +24,28 @@
         <section class="db-col-2">
 
             <!-- Informacion de general -->
-            <article class="card-db">
-                <section class="card-db__header">
-                    <h4 class="card-db__title">Informacion general</h4>
+            <article class="card">
+                <section class="card__header">
+                    <h4 class="card__title">Informacion general</h4>
                 </section>
 
-                <section class="card-db__body">
-                    <div class="card-db__row">
-                        <div class="card-db__box">
+                <section class="card__body">
+                    <div class="card__row">
+                        <div class="card__inputs-group">
                             <label for="product_name" class="label">Nombre</label>
                             <input type="text" class="input" id="product_name" name="product_name" value="<%= product.product_name %>">
                         </div>
                     </div>
 
-                    <div class="card-db__row">
-                        <div class="card-db__box">
+                    <div class="card__row">
+                        <div class="card__inputs-group">
                             <label for="product_description" class="label">Descripcion</label>
                             <textarea name="product_description" id="product_description" class="input"><%= product.product_description %></textarea>
                         </div>
                     </div>
 
-                    <div class="card-db__row card-db-col-2">
-                        <div class="card-db__box">
+                    <div class="card__row card-col-2">
+                        <div class="card__inputs-group">
                             <label for="collection_name" class="label">
                                 <span>Coleccion</span>
                                 <a class="label__link" href="/admin/collection/add">Nueva coleccion</a>
@@ -64,27 +64,27 @@
             </article>
 
             <!-- Imagenes -->
-            <article class="card-db ">
-                <section class="card-db__header">
-                    <h4 class="card-db__title">Imagenes</h4>
+            <article class="card ">
+                <section class="card__header">
+                    <h4 class="card__title">Imagenes</h4>
                 </section>
 
-                <section class="card-db__body">
-                    <div class="card-db__row card-db-col-2">
-                        <div class="card-db__box card-db__box-img">
+                <section class="card__body">
+                    <div class="card__row card-col-2">
+                        <div class="card__inputs-group card__inputs-group-img">
                             <label for="img_front" class="label">Producto</label>
-                            <div class="">
-                                <label for="img_front" class="card-db_figure">
+                            <div class="card__figure">
+                                <label for="img_front">
                                     <img src="<%= product.img_front %>" alt="" srcset="">
                                 </label>
                                 <input type="file" name="img_front" id="img_front">
                             </div>
                         </div>
 
-                        <div class="card-db__box card-db__box-img">
+                        <div class="card__inputs-group card__inputs-group-img">
                             <label for="img_back" class="label">Paquete</label>
-                            <div class="">
-                                <label for="img_back" class="card-db_figure">
+                            <div class="card__figure">
+                                <label for="img_back">
                                     <img src="<%= product.img_back %>" alt="" srcset="">
                                 </label>
                                 <input type="file" name="img_back" id="img_back">
@@ -99,25 +99,24 @@
         <section class="db-col-1">
 
             <!-- Precio -->
-            <article class="card-db">
-                <section class="card-db__header">
-                    <h4 class="card-db__title">Precio</h4>
+            <article class="card">
+                <section class="card__header">
+                    <h4 class="card__title">Precio</h4>
                 </section>
-                <section class="card-db__body">
-                    <div class="card-db__row card-db-col-2">
-
-                        <div class="card-db__box">
+                <section class="card__body">
+                    <div class="card__row card__row-2">
+                        <div class="card__inputs-group">
                             <label for="product_price" class="label">Precio</label>
                             <input type="number" class="input --hide-arrows" id="product_price" name="product_price" value="<%= product.product_price %>">
                         </div>
 
-                        <div class="card-db__box">
+                        <div class="card__inputs-group">
                             <label for="product_discount" class="label">Descuento</label>
                             <input type="number" class="input --hide-arrows" id="product_discount" name="product_discount"value="<%= product.product_discount %>">
                         </div>
                     </div>
-                    <div class="card-db__row card-db-col-2">
-                        <div class="card-db__box">
+                    <div class="card__row card__row-2">
+                        <div class="card__inputs-group">
                             <label for="product_dues" class="label">Cuotas</label>
                             <select class="input input--select" name="product_dues" id="product_dues">
                                 <option value="0" <% if (product.product_dues == '0') { %> selected <% } %> >0</option>
@@ -126,7 +125,7 @@
                                 <option value="12" <% if (product.product_dues == '12') { %> selected <% } %> >12</option>
                             </select>
                         </div>
-                        <div class="card-db__box">
+                        <div class="card__inputs-group">
                             <label for="product_interes" class="label">¿Interés?</label>
                             <select class="input input--select" name="product_interes" id="product_interes">
                                 <option value="0" <% if (product.product_interes == 0) { %> selected <% } %> >Sin interés</option>
@@ -138,13 +137,13 @@
             </article>
 
             <!-- Inventario -->
-            <article class="card-db">
-                <section class="card-db__header">
-                    <h4 class="card-db__title">Inventario</h4>
+            <article class="card">
+                <section class="card__header">
+                    <h4 class="card__title">Inventario</h4>
                 </section>
-                <section class="card-db__body">
-                    <div class="card-db__row">
-                        <div class="card-db__box">
+                <section class="card__body">
+                    <div class="card__row">
+                        <div class="card__inputs-group">
                             <label for="provider_id" class="label">
                                 <span>Provedor</span>
                                 <a class="label__link" href="/admin/provider/add">Nuevo provedor</a>
@@ -159,19 +158,19 @@
                             </select>
                         </div>
                     </div>
-                    <div class="card-db__row">
+                    <div class="card__row">
 
-                        <div class="card-db__box">
+                        <div class="card__inputs-group">
                             <label for="product_sku" class="label">SKU (<%= product.collection_sku %>)</label>
                             <input type="text" class="input" id="product_sku" name="product_sku" value="<%= product.product_sku %>">
                         </div>
                     </div>
-                    <div class="card-db__row card-db-col-2">
-                        <div class="card-db__box">
+                    <div class="card__row card-col-2">
+                        <div class="card__inputs-group">
                             <label for="product_stock" class="label">Stock</label>
                             <input type="number" class="input --hide-arrows" id="product_stock" name="product_stock" value="<%= product.product_stock %>">
                         </div>
-                        <div class="card-db__box">
+                        <div class="card__inputs-group">
                             <span class="label">Estado</span>
                             <div class="checkbox-container">
                                 <input type="checkbox" name="product_state" id="product_state" class="input--checkbox"
@@ -185,22 +184,22 @@
             </article>
 
             <!-- Varios -->
-            <article class="card-db">
-                <section class="card-db__header">
-                    <h4 class="card-db__title">Varios</h4>
+            <article class="card">
+                <section class="card__header">
+                    <h4 class="card__title">Varios</h4>
                 </section>
-                <section class="card-db__body">
-                    <div class="card-db__row">
+                <section class="card__body">
+                    <div class="card__row">
 
-                        <div class="card-db__box">
-
-                        </div>
-
-                        <div class="card-db__box">
+                        <div class="card__inputs-group">
 
                         </div>
 
-                        <div class="card-db__box">
+                        <div class="card__inputs-group">
+
+                        </div>
+
+                        <div class="card__inputs-group">
 
                             </select>
                         </div>

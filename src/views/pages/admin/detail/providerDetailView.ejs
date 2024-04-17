@@ -21,27 +21,27 @@
 
     <section class="db-col-2">
 
-        <article class="card-db">
-            <section class="card-db__header">
-                <h4 class="card-db__title">Informacion general</h4>
+        <article class="card">
+            <section class="card__header">
+                <h4 class="card__title">Informacion general</h4>
             </section>
-            <section class="card-db__body">
-                <div class="card-db__row">
-                    <div class="card-db__box">
+            <section class="card__body">
+                <div class="card__row">
+                    <div class="card__inputs-group">
                         <h5>Nombre</h5>
                         <p><%= provider.provider_name %></p>
                     </div>
                 </div>
                 
-                <div class="card-db__row">
-                    <div class="card-db__box">
+                <div class="card__row">
+                    <div class="card__inputs-group">
                         <h5>Observacion</h5>
                         <p><%= provider.provider_observation %></p>
                     </div>
                 </div>
 
-                <div class="card-db__row">
-                    <div class="card-db__box">
+                <div class="card__row">
+                    <div class="card__inputs-group">
                         <h5>Telefono de contacto</h5>
                         <p><%= provider.provider_tel %></p>
                     </div>
@@ -49,11 +49,11 @@
                 
             </section>
         </article>
-        <article class="card-db">
-            <section class="card-db__header">
-                <h4 class="card-db__title">Productos de este proveedor</h4>
+        <article class="card">
+            <section class="card__header">
+                <h4 class="card__title">Productos de este proveedor</h4>
             </section>
-            <section class="card-db__body">
+            <section class="card__body">
                 <table id="adminTable" class="table-admin">
                     <thead class="table-admin__head">
 
